@@ -17,4 +17,10 @@ router.post('/problem',async(req,res)=>{
     res.redirect('/problem');
 })
 
+router.get('/problem/array',async(req,res)=>{
+    const problem=await Problem.find({});
+    const array=problem.filter((p)=>p.topic==='Array');
+    res.send(array);
+})
+
 module.exports=router;
