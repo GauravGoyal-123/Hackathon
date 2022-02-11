@@ -1,0 +1,18 @@
+<%layout('layouts/boilerplate')-%>
+
+<section>
+    <%for(let p of prblm){%>
+        <ul>
+            <li>
+                <%=p.topic%>
+            </li>
+            <li>
+                <%=p.level%>
+            </li>
+            <li>
+                <p><%=p.desc%></p>
+                
+            </li>
+        </ul>
+    <%}%>
+</section>

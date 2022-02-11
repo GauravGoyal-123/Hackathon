@@ -1,0 +1,22 @@
+<%layout('layouts/boilerplate')-%>
+
+<section>
+    <h1>New Problem</h1>
+    <section>
+        <form action="/problem" method="post">
+            <div class="mb-3">
+                <label class="form-label" for="topic">Topic :</label>
+                <input class="form-control" type="text" name="topic" id="topic" placeholder="Topic">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="level">level :</label>
+                <input class="form-control" type="text" name="level" id="level" placeholder="Level">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="desc">Description :</label>
+                <textarea class="form-control" name="desc" id="desc" cols="30" rows="10"></textarea>
+            </div>
+            <button type="submit" class="btn btn-sm btn-success">Submit</button>
+        </form>
+    </section>
+</section>
