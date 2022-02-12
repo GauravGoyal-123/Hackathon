@@ -21,9 +21,27 @@ main{
 .ques{
     border: 2px solid black;
     padding: 10px;
+    margin-top: 20px;
 }
 
 .topic{
     border-right: 2px solid black;
+}
+.topicname{
+    padding: 5px;
+    margin: 10px;
+}
+
+.topicname li{
+    border: 1px solid gray;
+    box-shadow: 2px 2px 2px gray;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+.topicname li a{
+    text-decoration: none;
+    color: black;
 }
 

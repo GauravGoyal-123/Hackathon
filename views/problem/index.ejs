@@ -3,36 +3,38 @@
     <div class="col-lg-2 m-4 topic">
         <h2>Topic</h2>
         <hr>
-        <ul style="list-style: none;">
-            <li>Array</li>
-            <li>Array</li>
-            <li>Array</li>
-            <li>Array</li>
-            <li>Array</li>
-            <li>Array</li>
-            <li>Array</li>
-            <li>Array</li>
+        <ul style="list-style: none;" class="topicname">
+            <li><a href="/problem/array">Array</a></li>
+            <li><a href="">Array</a></li>
+            <li><a href="">Array</a></li>
+            <li><a href="">Array</a></li>
+            <li><a href="">Array</a></li>
+            <li><a href="">Array</a></li>
+            
         </ul>
     </div>
         
 
-   <div class="col-lg-8 m-4">
-        <div class="container">
+   <div class="col-lg-8 m-2">
+        <div>
             <%for(let p of prblm){%>
-                <ul class="ques">
-                    <li>
-                        <%=p.topic%>
-                    </li>
-                    <li>
-                        <%=p.level%>
-                    </li>
-                    <div class="pro">
-                        <p><%=p.desc%></p>
+                <ul class="container ques">
+                    <div>
+                        <span>
+                            <%=p.topic%>
+                            <span style="float: right;"><%=p.level%></span>
+                            
+                        </span>
                         
+                         
+                        <div class="pro">
+                            <p><%=p.desc%></p>
+                            
+                        </div>
                     </div>
-                    <li>
-                        <button><a href="/problem/<%=p._id%>/answer">Answer</a></button>
-                    </li>
+                    <div>
+                        <button style="margin-left: 90%;"><a href="/problem/<%=p._id%>/answer">Answer</a></button>
+                    </div>
                 </ul>
             <%}%>
         </section>
