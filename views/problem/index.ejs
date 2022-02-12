@@ -1,4 +1,5 @@
 <%layout('layouts/boilerplate')-%>
+<<<<<<< HEAD
 <div class="row">
     <div class="col-lg-4">
         <div class="card" style="width: 18rem;">
@@ -8,6 +9,27 @@
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <a href="#" class="card-link">Card link</a>
               <a href="#" class="card-link">Another link</a>
+=======
+
+<section>
+    <%for(let p of prblm){%>
+        <ul>
+            <li>
+                <%=p.topic%>
+            </li>
+            <li>
+                <%=p.level%>
+            </li>
+            <div class="pro">
+                <pre><%=p.desc%></pre>
+                
+            </li>
+            <li>
+                <button>
+                    Ask Question
+                </button>
+            </li>
+>>>>>>> b9fe5d91ae1df3b517e784b6fe3ae62f04d60dae
             </div>
           </div>
     </div>
