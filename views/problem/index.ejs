@@ -20,15 +20,17 @@
             <%for(let p of prblm){%>
                 <ul class="container ques">
                     <div>
-                        <span>
-                            <%=p.topic%>
-                            <span style="float: right;"><%=p.level%></span>
-                            
-                        </span>
+                        <div class="mb-3">
+                            <div class="head" style="border-right: 1px solid gray;"><%=p.topic%></div>
+                            <div class="head"  style="border-right: 1px solid gray;"><%=p.lang%></div>
+                            <div class="head"><%=p.level%></div>
+                            <hr>    
+                        </div>
                         
                          
                         <div class="pro">
-                            <p><%=p.desc%></p>
+                            <p><%=p.statement%></p>
+
                             
                         </div>
                     </div>

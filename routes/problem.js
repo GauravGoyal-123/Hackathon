@@ -4,6 +4,7 @@ const Problem = require('../models/problems');
 
 router.get('/problem',async(req,res)=>{
     const prblm = await Problem.find({});
+    console.log(prblm);
     res.render('problem/index',{prblm});
 })
 
@@ -12,8 +13,8 @@ router.get('/newproblem',(req,res)=>{
 });
 
 router.post('/problem',async(req,res)=>{
-    const {topic,level,lang,desc} = req.body;
-    await Problem.create({topic,level,lang,desc});
+    const {topic,level,lang,statement,example} = req.body;
+    await Problem.create({topic,level,lang,statement,example});
     res.redirect('/problem');
 })
 

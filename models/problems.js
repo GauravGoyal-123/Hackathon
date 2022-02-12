@@ -13,9 +13,13 @@ const problemSchema = new mongoose.Schema({
         type:String,
         trim:true
     },
-    desc:{
+    statement:{
         type:String,
         trim:true
+    },
+    example:{
+        type:String,
+        trim:true,
     },
     discuss:[
         {
