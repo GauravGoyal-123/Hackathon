@@ -9,4 +9,20 @@
     display: flex;
     justify-content: space-around;
 }
+main{
+    margin-top: 10px;
+}
+
+.ques li{
+    list-style: none;
+}
+
+.ques{
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.topic{
+    border-right: 2px solid black;
+}
 

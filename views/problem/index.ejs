@@ -1,14 +1,25 @@
 <%layout('layouts/boilerplate')-%>
 <div class="row">
-    <div class="col-lg-4">
-
+    <div class="col-lg-2 m-4 topic">
+        <h2>Topic</h2>
+        <hr>
+        <ul style="list-style: none;">
+            <li>Array</li>
+            <li>Array</li>
+            <li>Array</li>
+            <li>Array</li>
+            <li>Array</li>
+            <li>Array</li>
+            <li>Array</li>
+            <li>Array</li>
+        </ul>
     </div>
         
 
-   <div class="col-lg-8">
-        <section class="container-fluid">
+   <div class="col-lg-8 m-4">
+        <div class="container">
             <%for(let p of prblm){%>
-                <ul>
+                <ul class="ques">
                     <li>
                         <%=p.topic%>
                     </li>
