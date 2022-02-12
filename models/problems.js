@@ -5,6 +5,10 @@ const problemSchema = new mongoose.Schema({
         type:String,
         trim:true
     },
+    lang:{
+        type:String,
+        trim:true,
+    },
     level:{
         type:String,
         trim:true

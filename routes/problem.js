@@ -12,8 +12,8 @@ router.get('/newproblem',(req,res)=>{
 });
 
 router.post('/problem',async(req,res)=>{
-    const {topic,level,desc} = req.body;
-    await Problem.create({topic,level,desc});
+    const {topic,level,lang,desc} = req.body;
+    await Problem.create({topic,level,lang,desc});
     res.redirect('/problem');
 })
 
