@@ -17,6 +17,13 @@ const problemSchema = new mongoose.Schema({
         type:String,
         trim:true
     },
+    discuss:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'Discuss'
+
+        }
+    ]
 });
 
 const Problem = mongoose.model('Problem',problemSchema);

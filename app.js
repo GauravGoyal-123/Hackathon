@@ -19,8 +19,10 @@ app.get('/',(req,res)=>{
 })
 
 const problemRouter = require('./routes/problem');
+const discussRouter = require('./routes/discuss');
 
 app.use(problemRouter);
+app.use(discussRouter);
 
 const port = 5000;
 app.listen(port,()=>{
