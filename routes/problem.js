@@ -17,6 +17,18 @@ router.post('/problem',async(req,res)=>{
     res.redirect('/problem');
 })
 
+router.get('/problem/:id/answer',async(req,res)=>{
+    const {id}=req.params;
+    const prblm=await Problem.findById(id);
+    res.render('problem/show',{prblm});
+})
+
+router.get('/problem/:id/discuss',async(req,res)=>{
+    const {id}=req.params;
+    const prblm=await Problem.findById(id);
+    res.render('problem/discuss',{prblm});
+})
+
 router.get('/problem/array',async(req,res)=>{
     const problem=await Problem.find({});
     const array=problem.filter((p)=>p.topic==='Array');
