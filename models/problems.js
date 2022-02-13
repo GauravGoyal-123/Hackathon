@@ -23,7 +23,7 @@ const problemSchema = new mongoose.Schema({
     },
     discuss:[
         {
-            type:mongoose.Schema.Types.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref:'Discuss'
 
         }
