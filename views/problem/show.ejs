@@ -2,44 +2,50 @@
 
 <div class="row">
     <div>
-        <div class="shownav">
+        <div class="shownav" style="border-right: 2px solid gray;">
             <p><a style="text-decoration: none; color: black;" href="/problem/<%=prblm._id%>/answer">Problem</a></p>
         </div>
         <div class="shownav">
             <p><a style="text-decoration: none; color: black;" href="/problem/<%=prblm._id%>/discuss">Discuss</a></p>
         </div>
     </div>
+    <hr>
 
 </div>
-<div class="row ">
+<div class="row container-fluid">
     
-    <div class="col-lg-4">
+    <div>
         
         <ul style="list-style: none;">
-            <li>
-                <%=prblm.topic%>
-            </li>
-            <li>
-                <%=prblm.level%>
-            </li>
-            <li>
+            <div style="display: inline-block;">
+                <span>
+                    <h5 style="display:inline-block;">Topic:</h5>
+                    <%=prblm.topic%>
+                </span>
+                <span style="margin: 50px;">
+                    <h5 style="display:inline-block">Level:</h5>
+                    <%=prblm.level%>
+                </span>
+            </div>
+            <li style="font-size: 1.2rem;">
                 <%=prblm.statement%>
             </li>
             <li>
+                <h5 style="display: inline-block;">Custom Input:</h5>
                 <pre><%=prblm.example%></pre>
                 
             </li>
         </ul>
     </div>
 
-    <div class="col-lg-6">
+</div>
+<div class="row container-fluid my-4 mb-4">
+    <h2>Add your Answer</h2>
         
-        <form action="/problem/<%=prblm._id%>/discuss" method="post">
-             <textarea class="form-control" name="description" id="" cols="10" rows="5" placeholder="Description"></textarea>
-             <textarea class="form-control" name="exp" id="" cols="10" rows="15" placeholder="Explanation"></textarea>
-             <button type="submit" class="btn btn-primary">Add</button>
-        </form>
-        
-    </div>
-
+    <form action="/problem/<%=prblm._id%>/discuss" method="post">
+         <textarea class="form-control mb-4 fs-5" name="description" id="" cols="8" rows="3" placeholder="Description"></textarea>
+         <textarea class="form-control mb-4 fs-5" name="exp" id="" cols="8" rows="10" placeholder="Write your code here...."></textarea>
+         <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+    
 </div>

@@ -19,9 +19,9 @@
 
    <div class="col-lg-8 m-2">
        <div class="container ask">
-           Ask a ques
+           <span style="margin: 50%;">Hii</span>
+
        </div>
-        <div>
             <%for(let p of prblm){%>
                 <ul class="container ques">
                     <div>
@@ -34,7 +34,7 @@
                         
                          
                         <div class="pro">
-                            <p><%=p.statement%></p>
+                            <p><%=p.statement.substring(0,200)%>...</p>
                         </div>
                     </div>
                     <div>
@@ -42,7 +42,6 @@
                     </div>
                 </ul>
             <%}%>
-        </section>
 
     </div>
 
