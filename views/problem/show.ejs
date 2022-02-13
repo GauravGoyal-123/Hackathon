@@ -34,11 +34,12 @@
 
     <div class="col-lg-6">
         
-        <form action="">
-             <textarea class="form-control" name="Answer" id="" cols="10" rows="5" placeholder="Description"></textarea>
-             <textarea class="form-control" name="Answer" id="" cols="10" rows="15" placeholder="Explanation"></textarea>
-            </form>
-        <button type="submit" class="btn btn-primary">Add</button>
+        <form action="/problem/<%=prblm._id%>/discuss" method="post">
+             <textarea class="form-control" name="description" id="" cols="10" rows="5" placeholder="Description"></textarea>
+             <textarea class="form-control" name="exp" id="" cols="10" rows="15" placeholder="Explanation"></textarea>
+             <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+        
     </div>
 
 </div>

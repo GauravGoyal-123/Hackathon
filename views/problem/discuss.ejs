@@ -1,21 +1,29 @@
 <%layout('layouts/boilerplate')-%>
 
 <div class="row">
-    
-    <div class="col-lg-4">
-        <p><a href="/problem/<%=prblm._id%>/answer">Problem</a></p>
+    <div>
+        <div class="shownav">
+            <p><a style="text-decoration: none; color: black;" href="/problem/<%=prblm._id%>/answer">Problem</a></p>
+        </div>
+        <div class="shownav">
+            <p><a style="text-decoration: none; color: black;" href="/problem/<%=prblm._id%>/discuss">Discuss</a></p>
+        </div>
     </div>
-
-    <div class="col-lg-6">
-        <p><a href="/problem/<%=prblm._id%>/discuss">Discuss</a></p>
-    </div>
-
 </div>
 
 <section>
     <div>
-        <h1>
-            Discuss Section
-        </h1>
+        Discuss Section
+        <div>
+            <%for(let dis of prblm.discuss){%>
+            <div>
+                <p><a style="text-decoration: none;" href="/problem/discuss/<%=dis._id%>">
+                    <h3><%=dis.description%></h3>
+                    </a>
+                </p>
+
+            </div>
+            <%}%>
+        </div>
     </div>
 </section>
