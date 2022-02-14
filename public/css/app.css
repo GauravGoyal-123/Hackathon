@@ -49,15 +49,24 @@ main{
     text-shadow: 2px 2px 2px rgb(94, 90, 90);
     letter-spacing: 0.1rem;
 }
+.heading{
+    font-family: 'Akaya Telivigala', cursive;
+font-family: 'Comforter Brush', cursive;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Luxurious Roman', cursive;
+font-family: 'Mochiy Pop P One', sans-serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Pacifico', cursive;
+font-family: 'Permanent Marker', cursive;
+font-family: 'Redressed', cursive;
+/* display: inline-block; */
+}
 
 .ask{
     height: 500px;
     width: 100px;
-    margin: 50px;
-    display: inline-block;
-    background-image: url('https://i.postimg.cc/L5XRbc91/What-do-you-need-to-know.jpg');
-    background-repeat: no-repeat;
-    background-size: contain;
+    border: 2px solid black;
 }
 .topicname{
     padding: 5px;
