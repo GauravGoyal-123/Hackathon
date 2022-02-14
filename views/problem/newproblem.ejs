@@ -3,25 +3,25 @@
 <section>
     <h1>New Problem</h1>
     <section>
-        <form action="/problem" method="post">
+        <form action="/problem" method="post" class="validated-form" novalidate>
             <div class="mb-3">
                 <label class="form-label" for="topic">Topic :</label>
-                <input class="form-control" type="text" name="topic" id="topic" placeholder="Topic">
+                <input class="form-control" type="text" name="topic" id="topic" placeholder="Topic" required>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="level">level :</label>
-                <input class="form-control" type="text" name="level" id="level" placeholder="Level">
+                <input class="form-control" type="text" name="level" id="level" placeholder="Level" required>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="lang">Language :</label>
-                <input class="form-control" type="text" name="lang" id="lang" placeholder="Language">
+                <input class="form-control" type="text" name="lang" id="lang" placeholder="Language" required>
             </div>
             <div class="mb-3">
                 <h5>Description</h5>
                 <label class="form-label" for="statement"></label>
-                <textarea class="form-control" name="statement" id="statement" cols="10" rows="8" placeholder="statement"></textarea>
+                <textarea class="form-control" name="statement" id="statement" cols="10" rows="8" placeholder="statement"  required></textarea>
                 <label class="form-label" for="example">Custom Input:</label>
-                <textarea class="form-control" name="example" id="example" cols="5" rows="5"></textarea>
+                <textarea class="form-control" name="example" id="example" cols="5" rows="5"  required></textarea>
             </div>
             <button type="submit" class="btn btn-sm btn-success">Submit</button>
         </form>
