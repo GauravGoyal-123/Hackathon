@@ -1,35 +1,64 @@
 const express = require('express');
 const router = express.Router();
 const Problem = require('../models/problems');
+const {problemValidate} = require('../middleware');
 
 router.get('/problem',async(req,res)=>{
-    const prblm = await Problem.find({});
-    // time stamp;
-    res.render('problem/index',{prblm});
+    try{
+        const prblm = await Problem.find({});
+        // time stamp;
+        res.render('problem/index',{prblm});
+    }
+    catch(e){
+        res.status(500).render("error",{err:e.message});
+    }
+    
 })
 
 router.get('/newproblem',(req,res)=>{
-    res.render('problem/newproblem')
+    try{
+        res.render('problem/newproblem');
+    }
+    catch(e){
+        res.status(500).render("error",{err:e.message});
+    }
+    
 });
 
-router.post('/problem',async(req,res)=>{
-    const {topic,level,lang,statement,example} = req.body;
-    await Problem.create({topic,level,lang,statement,example});
-    res.redirect('/problem');
+router.post('/problem',problemValidate,async(req,res)=>{
+    try{
+        const {topic,level,lang,statement,example} = req.body;
+        await Problem.create({topic,level,lang,statement,example});
+        res.redirect('/problem');
+    }
+    catch(e){
+        res.status(500).render("error",{err:e.message});
+    }
 })
 
 router.get('/problem/:id/answer',async(req,res)=>{
-    const {id}=req.params;
-    const prblm=await Problem.findById(id);
-    res.render('problem/show',{prblm});
+    try{
+        const {id}=req.params;
+        const prblm=await Problem.findById(id);
+        res.render('problem/show',{prblm});
+    }
+    catch(e){
+        res.status(500).render("error",{err:e.message});
+    }
 })
 
 
 
 router.get('/problem/array',async(req,res)=>{
-    const problem=await Problem.find({});
-    const array=problem.filter((p)=>p.topic==='Array');
-    res.send(array);
+    try{
+        const problem=await Problem.find({});
+        const array=problem.filter((p)=>p.topic==='Array');
+        res.send(array);
+    }
+    catch(e){
+        res.status(500).render("error",{err:e.message});
+    }
+    
 })
 
 module.exports=router;
