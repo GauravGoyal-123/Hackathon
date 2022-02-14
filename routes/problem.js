@@ -4,6 +4,7 @@ const Problem = require('../models/problems');
 
 router.get('/problem',async(req,res)=>{
     const prblm = await Problem.find({});
+    // time stamp;
     res.render('problem/index',{prblm});
 })
 

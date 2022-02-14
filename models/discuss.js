@@ -9,7 +9,7 @@ const discussSchema = mongoose.Schema({
         type:String,
         trim:true,
     }
-});
+},{timestamps:true});
 
 const Discuss = mongoose.model('Discuss',discussSchema);
 module.exports=Discuss;

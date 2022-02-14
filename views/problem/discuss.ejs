@@ -19,11 +19,17 @@
         <div class="container-fluid">
             <%for(let dis of prblm.discuss){%>
             <div class="discuss-head">
-                <p><a style="text-decoration: none; color: black;" href="/problem/discuss/<%=dis._id%>">
-                    <h3><%=dis.description%></h3>
-                    </a>
-                </p>
-
+                <div>
+                    <p><a style="text-decoration: none; color: black;" href="/problem/discuss/<%=dis._id%>">
+                        <h3><%=dis.description%></h3>
+                        </a>
+                    </p>
+                </div>
+                    <div>
+                    <%if(dis.createdAt){%>
+                        <p><%=dis.createdAt.toDateString()%></p>
+                    <%}%>
+                </div>
             </div>
             <%}%>
         </div>
