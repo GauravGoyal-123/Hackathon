@@ -5,18 +5,23 @@
         <hr>
         <ul style="list-style: none;" class="topicname">
             <li><a href="/problem/array">Array</a></li>
-            <li><a href="">Array</a></li>
-            <li><a href="">Array</a></li>
-            <li><a href="">Array</a></li>
-            <li><a href="">Array</a></li>
-            <li><a href="">Array</a></li>
+            <li><a href="/problem/strings">Strings</a></li>
+            <li><a href="/problem/recursion">Recursion</a></li>
+            <li><a href="/problem/hashing">Hashing</a></li>
+            <li><a href="/problem/stacks">Stacks</a></li>
+            <li><a href="/problem/queue">Queue</a></li>
+            <li><a href="/problem/trees">Trees</a></li>
+            <li><a href="/problem/graphs">Graphs</a></li>
             
         </ul>
     </div>
         
 
    <div class="col-lg-8 m-2">
-        <div>
+       <div class="container ask">
+           <span style="margin: 50%;">Hii</span>
+
+       </div>
             <%for(let p of prblm){%>
                 <ul class="container ques">
                     <div>
@@ -29,10 +34,7 @@
                         
                          
                         <div class="pro">
-                            <p><%=p.statement%></p>
-                            <!-- <%if(p.createdAt){%>
-                                <p><%=p.createdAt.toDateString()%></p> 
-                                <%}%> -->
+                            <p><%=p.statement.substring(0,200)%>...</p>
                         </div>
                     </div>
                     <div>
@@ -40,7 +42,6 @@
                     </div>
                 </ul>
             <%}%>
-        </section>
 
     </div>
 
