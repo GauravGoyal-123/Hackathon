@@ -1,12 +1,13 @@
-
-main{
-    margin-top: 4 rem;
+body{
+    overflow-x: hidden;
     background: #0F2027;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+main{
+    margin-top: 4 rem;
     color: white;
 }
-
 .box{
     display: flex;
     justify-content: space-around;
@@ -65,23 +66,16 @@ font-family: 'Oswald', sans-serif;
 font-family: 'Pacifico', cursive;
 font-family: 'Permanent Marker', cursive;
 font-family: 'Redressed', cursive;
+font-size: 60px;
+margin: 15px;
+ color: #66F6F1; 
+ text-shadow: 2px 2px 2px white;
 /* display: inline-block; */
 }
-
-.ask{
-    height: 380px;
-    width: 100px;
-    /* border: 2px solid black; */
-}
-.askbtn{
-    margin-left: 35px;
-    font-size: 25px;
-    background-color: #0f122c;
-    border-radius: 40px;
-    border: none;
-    padding: 10px;
-    font-family: cursive;
-    margin-bottom: 10px;
+@media screen and (max-width:1535) {
+    .heading{
+        font-size: 20px;
+    }
 }
 .topicname{
     padding: 5px;
