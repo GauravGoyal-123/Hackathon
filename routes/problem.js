@@ -29,6 +29,7 @@ router.post('/problem',problemValidate,async(req,res)=>{
     try{
         const {topic,level,lang,statement,example} = req.body;
         await Problem.create({topic,level,lang,statement,example});
+        req.flash('success',"Add a new problem successfully!!!!");
         res.redirect('/problem');
     }
     catch(e){

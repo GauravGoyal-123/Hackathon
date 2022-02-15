@@ -15,6 +15,7 @@ router.post('/problem/:id/discuss',discussValidate,async(req,res)=>{
         await dis.save();
         await prblm.save();
         console.log(dis);
+        req.flash('success',"Add a new answer successfully!!!!");
         res.redirect(`/problem/${id}/discuss`);
     }
     catch(e){
