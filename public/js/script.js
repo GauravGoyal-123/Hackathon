@@ -12,6 +12,7 @@
           if (!form.checkValidity()) {
             event.preventDefault()
             event.stopPropagation()
+            alert('Enter your answer')
           }
   
           form.classList.add('was-validated')

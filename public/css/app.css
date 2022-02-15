@@ -1,7 +1,10 @@
 
 main{
     margin-top: 4 rem;
-    background-color: #f8edeb;
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
 }
 
 .box{
@@ -15,11 +18,13 @@ main{
 }
 
 .ques{
-    border: 2px solid rgb(209, 197, 197);
+    border: 1px solid rgb(97, 226, 226);
     padding: 10px;
     margin-top: 20px;
-    box-shadow: 5px 5px 5px rgb(207, 199, 199);
-    font-family: 'Courier New', Courier, monospace;
+    box-shadow: 2px 2px 2px rgb(101, 190, 186);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 0.1rem;
+    /* display: flex; */
 }
 .head{
     display: inline-block;
@@ -64,9 +69,19 @@ font-family: 'Redressed', cursive;
 }
 
 .ask{
-    height: 500px;
+    height: 380px;
     width: 100px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
+}
+.askbtn{
+    margin-left: 35px;
+    font-size: 25px;
+    background-color: #0f122c;
+    border-radius: 40px;
+    border: none;
+    padding: 10px;
+    font-family: cursive;
+    margin-bottom: 10px;
 }
 .topicname{
     padding: 5px;
@@ -96,7 +111,7 @@ font-family: 'Redressed', cursive;
 
 .topicname li a{
     text-decoration: none;
-    color: black;
+    color: #66F6F1;
 }
 
 .shownav{

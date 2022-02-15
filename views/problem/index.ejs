@@ -18,34 +18,37 @@
         
 
    <div class="col-lg-8 m-2">
-       <div class="container ask">
-           <div style="display: inline-block; margin: 20px;">
-            <h1 class="heading" style="font-size: 75px; margin: 20px;">Let your Doubts</h1>
-            <h2 class="heading" style="font-size: 60px; margin: 20px;">Fly Away...</h2>
+       <div class="container-fluid ask">
+           <div style="display: inline-block; margin-top: 10px;">
+            <h1 class="heading" style="font-size: 75px; margin: 15px; color: #66F6F1; text-shadow: 2px 2px 2px white;">Let your Doubts</h1>
+            <h2 class="heading" style="font-size: 60px; margin: 10px; color: #66F6F1; text-shadow: 2px 2px 2px white;">Fly Away...</h2>
+        </div>
+           <div style="display: inline-block; margin-left: 70px; position: relative; bottom: 5vmax;">
+            <img height="200px" src="https://www.linkpicture.com/q/pic_22.jpg" 
+            alt="">
+           </div >
+           <div>
+            <button class="askbtn"><a style="text-decoration: none; color: #66F6F1;" href="/newproblem">Ask Your Question</a></button>
            </div>
-           <div style="display: inline-block; margin-left: 70px; position: relative; bottom: 5vmax; box-shadow: 5px 5px 5px rgb(201, 196, 196); padding: 10px;">
-            <img style="border-radius: 10px;" src="https://pmtgurumantra.files.wordpress.com/2011/06/ask-your-doubt.jpg?w=600" alt="">
-           </div>
-               <button class="">Ask Your question</button>
             
        </div>
             <%for(let p of prblm){%>
                 <ul class="container ques">
                     <div>
                         <div class="mb-3">
-                            <div class="head" style="border-right: 1px solid gray;"><%=p.topic%></div>
-                            <div class="head"  style="border-right: 1px solid gray;"><%=p.lang%></div>
-                            <div class="head"><%=p.level%></div>
+                            <div class="head" style="border-right: 1px solid gray;">Topic: <%=p.topic%></div>
+                            <div class="head"  style="border-right: 1px solid gray;">Language: <%=p.lang%></div>
+                            <div class="head">Level: <%=p.level%></div>
                             <hr>    
                         </div>
                         
                          
-                        <div class="pro">
+                        <div class="pro" style="font-weight: bolder;">
                             <p><%=p.statement.substring(0,200)%>...</p>
                         </div>
                     </div>
                     <div>
-                        <button style="margin-left: 90%;"><a href="/problem/<%=p._id%>/answer">Answer</a></button>
+                        <button style="margin-left: 90%; border: none; font-size: 1.1rem; font-family: cursive; font-weight: bold; box-shadow: 1px 1px 1px #4697af;"><a style="text-decoration: none;" href="/problem/<%=p._id%>/answer">Answer</a></button>
                     </div>
                 </ul>
             <%}%>

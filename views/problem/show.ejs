@@ -42,9 +42,9 @@
 <div class="row container-fluid my-4 mb-4">
     <h2>Add your Answer</h2>
         
-    <form action="/problem/<%=prblm._id%>/discuss" method="post">
-         <textarea class="form-control mb-4 fs-5" name="description" id="" cols="8" rows="3" placeholder="Description"></textarea>
-         <textarea class="form-control mb-4 fs-5" name="exp" id="" cols="8" rows="10" placeholder="Write your code here...."></textarea>
+    <form action="/problem/<%=prblm._id%>/discuss" method="post" class="validated-form" novalidate>
+         <textarea class="form-control mb-4 fs-5" name="description" id="" cols="8" rows="3" placeholder="Description" required></textarea>
+         <textarea class="form-control mb-4 fs-5" name="exp" id="" cols="8" rows="10" placeholder="Write your code here...." required></textarea>
          <button type="submit" class="btn btn-primary">Add</button>
     </form>
     

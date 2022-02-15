@@ -19,6 +19,7 @@ router.post('/problem/:id/discuss',discussValidate,async(req,res)=>{
     }
     catch(e){
         res.status(500).render("error",{err:e.message});
+        // alert(`${e.message}`)
     }  
 })
 
