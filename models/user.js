@@ -4,7 +4,7 @@ const userSchema = new mongoose.Schema({
     email:{
         type:String,
         trim:true,
-
+        required:true,
     }
 })
 userSchema.plugin(passportLocalMongoose);
