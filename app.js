@@ -37,9 +37,11 @@ app.get('/',(req,res)=>{
 
 const problemRouter = require('./routes/problem');
 const discussRouter = require('./routes/discuss');
+const userRouter = require('./routes/user');
 
 app.use(problemRouter);
 app.use(discussRouter);
+app.use(userRouter);
 
 const port = 5000;
 app.listen(port,()=>{
