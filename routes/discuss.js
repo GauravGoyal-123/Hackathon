@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 const Problem = require('../models/problems');
 const Discuss = require('../models/discuss');
-const {discussValidate} = require('../middleware');
+const {discussValidate,isLoggedIn} = require('../middleware');
 
-router.post('/problem/:id/discuss',discussValidate,async(req,res)=>{
+router.post('/problem/:id/discuss',isLoggedIn,discussValidate,async(req,res)=>{
     try{
         const {id} = req.params; 
         console.log(req.body);
@@ -20,7 +20,6 @@ router.post('/problem/:id/discuss',discussValidate,async(req,res)=>{
     }
     catch(e){
         res.status(500).render("error",{err:e.message});
-        // alert(`${e.message}`)
     }  
 })
 
