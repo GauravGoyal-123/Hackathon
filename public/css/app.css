@@ -3,6 +3,7 @@ body{
     background: #0F2027;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: cursive;
 }
 main{
     margin-top: 4 rem;
@@ -23,9 +24,10 @@ main{
     padding: 10px;
     margin-top: 20px;
     box-shadow: 2px 2px 2px rgb(101, 190, 186);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    letter-spacing: 0.1rem;
-    /* display: flex; */
+/* font-family: 'Josefin Sans', sans-serif;
+font-family: 'Lobster', cursive; */
+font-family: 'Comforter Brush', cursive;
+font-family: 'Josefin Sans', sans-serif;
 }
 .head{
     display: inline-block;
@@ -61,11 +63,11 @@ font-family: 'Comforter Brush', cursive;
 font-family: 'Josefin Sans', sans-serif;
 font-family: 'Lobster', cursive;
 font-family: 'Luxurious Roman', cursive;
-font-family: 'Mochiy Pop P One', sans-serif;
+/* font-family: 'Mochiy Pop P One', sans-serif;
 font-family: 'Oswald', sans-serif;
 font-family: 'Pacifico', cursive;
 font-family: 'Permanent Marker', cursive;
-font-family: 'Redressed', cursive;
+font-family: 'Redressed', cursive; */
 font-size: 60px;
 margin: 15px;
  color: #66F6F1; 
@@ -88,11 +90,11 @@ margin: 15px;
     width: 10px;
 }
 ::-webkit-scrollbar-thumb{
-    background: linear-gradient(transparent,rgb(214, 182, 182));
+    background: linear-gradient(transparent,rgb(31, 29, 29));
     border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover{
-    background: linear-gradient(transparent,rgb(126, 122, 122));
+    background: linear-gradient(transparent,rgb(61, 59, 59));
 }
 
 .topicname li{

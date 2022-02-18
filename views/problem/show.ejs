@@ -17,22 +17,24 @@
     <div>
         
         <ul style="list-style: none;">
-            <div style="display: inline-block;">
+            <div style="display: inline-block; font-size: 25px;">
                 <span>
-                    <h5 style="display:inline-block;">Topic:</h5>
+                    <h5 style="display:inline-block; font-size: 25px;">Topic:</h5>
                     <%=prblm.topic%>
                 </span>
-                <span style="margin: 50px;">
-                    <h5 style="display:inline-block">Level:</h5>
+                <span style="margin: 100px;">
+                    <h5 style="display:inline-block; font-size: 25px;">Level:</h5>
                     <%=prblm.level%>
                 </span>
             </div>
-            <li style="font-size: 1.2rem;">
+            <li style="font-size: 1.3rem;">
                 <%=prblm.statement%>
             </li>
             <li>
-                <h5 style="display: inline-block;">Custom Input:</h5>
-                <pre><%=prblm.example%></pre>
+                <!-- <h5 style="display: inline-block;">Custom Input:</h5> -->
+
+                <h4><pre><%=prblm.example%></pre></h4>
+            
                 
             </li>
         </ul>
@@ -45,7 +47,7 @@
     <form action="/problem/<%=prblm._id%>/discuss" method="post" class="validated-form" novalidate>
          <textarea class="form-control mb-4 fs-5" name="description" id="" cols="8" rows="3" placeholder="Description" required></textarea>
          <textarea class="form-control mb-4 fs-5" name="exp" id="" cols="8" rows="10" placeholder="Write your code here...." required></textarea>
-         <button type="submit" class="btn btn-primary">Add</button>
+         <button type="submit" class="btn btn-dark">Add</button>
     </form>
     
 </div>
