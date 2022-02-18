@@ -38,7 +38,8 @@ router.get('/problem/discuss/:discuss_id',async(req,res)=>{
     try{
         const {discuss_id} = req.params;
         const prblmdis = await Discuss.findById(discuss_id);
-        res.send(prblmdis);
+        const exp= prblmdis.exp;
+        res.render('problem/exp',{exp});
     }
     catch(e){
         res.status(500).render("error",{err:e.message});

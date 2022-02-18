@@ -2,10 +2,11 @@
     margin: 0;
     padding: 0;
 }
-
 .main{
-    width: 100%;
-    background:url(blue.jpeg);
+    width: 100vw;
+    background: #780206;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #242a53, #780206);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0f1953, #9c3538); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -29,10 +30,20 @@
     padding-top: 10px;
     margin-top: 5px
 }
+
+.multicolortext {
+        background-image: linear-gradient(to left, violet, #5390d9, white, rgb(177, 177, 230), white , white, #5390d9);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+}
 .menu{
     width: 100px;
     float: left;
     height: 70px;
+    color: white;
+    margin-left: 150px;
 }
 ul{
     
@@ -44,9 +55,9 @@ ul{
 ul li{
 
     list-style: none;
-    margin-left: 62px;
+    margin-left: 80px;
     margin-top: 27px;
-    font-size: 14px;
+    font-size: 20px;
 }
 ul li a{
     white-space: nowrap;
@@ -59,26 +70,7 @@ ul li a{
 ul li a:hover{
     color: #3711c2;
 }
-/* .search{
-    width: 330px;
-    float: left;
-    margin-left: 270px;
-}
-.srch{
-    font-family: 'Times New Roman';
-    width: 200px;
-    height: 40px;
-    background: transparent;
-    border: 1px solid #050301;
-    margin-top: 13px;
-    color: #fff;
-    border-right: none;
-    font-size: 16px;
-    float: left;
-    padding: 10px;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-} */
+
 .btn{
     width: 100px;
     height: 40px;
@@ -109,15 +101,16 @@ height: auto;
     position: relative;
 }
 .moving{
-
-width: 0ch;
+color: #d6ce93;
+text-shadow: 1px 1px 1px #d6ce93;
+width: 80ch;
 overflow:hidden;
 white-space: nowrap;
-animation: text 8s ease-in ;
-animation-iteration-count: infinite;
+/* animation: text 8s ease-in ;
+animation-iteration-count: infinite; */
 }
 
-@keyframes text{
+/* @keyframes text{
 0%{
     width: 0ch;
 
@@ -137,7 +130,7 @@ animation-iteration-count: infinite;
     width: 100ch;
 }
 
-}
+} */
 
 
 .content p{
@@ -157,7 +150,7 @@ animation-iteration-count: infinite;
 .content .cn{
     width: 160px;
     height: 40px;
-    background: #5f3ae9;
+    background: #cbb2fe;
     border: none;
     margin-bottom: 10px;
     margin-left: 20px;
@@ -182,7 +175,7 @@ animation-iteration-count: infinite;
 .form{
     width: 250px;
     height: 320px;
-    background: linear-gradient(to top, rgba(67, 105, 230, 0.8)45%,rgba(116, 127, 223, 0.8)50%);
+    /* background: linear-gradient(to top, rgba(67, 105, 230, 0.8)45%,rgba(116, 127, 223, 0.8)50%); */
      
      /* background: linear-gradient(to top rgba(67, 230, 140, 0.8)50%,rgba(40, 58, 216, 0.8)50%); */
     position: absolute;
@@ -193,15 +186,13 @@ animation-iteration-count: infinite;
     padding: 25px;
 }
 .form h2{
-    width: 220px;
-    font-family: sans-serif;
-    text-align: center;
-    color: rgb(158, 198, 218);
-    font-size: 15px;
-    background-color:#1d0df3 ;
+    width: 300px;
+    font-family: cursive;
+    font-size: 1.5rem;
     border-radius: 10px;
     margin: 2px;
     padding: 8px;
+    background: none;
 }
 .form input{
     width: 240px;
@@ -227,7 +218,7 @@ animation-iteration-count: infinite;
 .btnn{
     width: 240px;
     height: 40px;
-    background: #1852be;
+    background: rgb(169, 169, 224);
     border: none;
     margin-top: 30px;
     font-size: 18px;
@@ -290,9 +281,12 @@ animation-iteration-count: infinite;
 .wrapper span:before{
     content :'';
     animation: animate infinite 8s;
-    color: rgb(36, 15, 221);
+    color: rgb(189, 166, 196);
+    text-shadow: 1px 1px 1px white;
     font-size: x-large;
+    font-size: 30px;
   }
+
   
   @keyframes animate{
   0%{
