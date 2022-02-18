@@ -11,7 +11,13 @@ router.post('/register',async(req,res)=>{
     const {username,password,email} = req.body;
     const user = new User({username,email});
     const newUser = await User.register(user,password);
-    res.send(newUser);
+    req.login(newUser, function(err) {
+        if (err){
+            return next(err);
+        }
+        req.flash('success', 'Welcome , You are Registered Successfully');
+        return res.redirect('/problem');
+    });
 })
 
 router.get('/login',(req,res)=>{
@@ -20,7 +26,6 @@ router.get('/login',(req,res)=>{
 
 router.post('/login',passport.authenticate('local',{ failureRedirect:'/login', failureFlash:true}),async(req,res)=>{
     req.flash('success',"Welcome back!!!!");
-    console.log('loggedin successfully');
     res.redirect('/problem');
 })
 

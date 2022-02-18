@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Problem = require('../models/problems');
-const {problemValidate} = require('../middleware');
+const {problemValidate,isLoggedIn} = require('../middleware');
 
 router.get('/problem',async(req,res)=>{
     try{
@@ -15,7 +15,7 @@ router.get('/problem',async(req,res)=>{
     
 })
 
-router.get('/newproblem',(req,res)=>{
+router.get('/newproblem',isLoggedIn,(req,res)=>{
     try{
         res.render('problem/newproblem');
     }
