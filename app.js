@@ -50,7 +50,7 @@ app.use((req,res,next)=>{
 })
 
 app.get('/',(req,res)=>{
-    res.send("Welcome");
+    res.render('home');
 })
 
 const problemRouter = require('./routes/problem');
