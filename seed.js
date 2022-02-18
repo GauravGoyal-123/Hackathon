@@ -7,7 +7,7 @@ mongoose.connect('mongodb://localhost:27017/doubtaway')
 const prblm = [
     {
         topic:"Array",
-        level:"Easy",
+        level:"Hard",
         lang:"Python",
         statement:"Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.",
         example : "Input: nums = [-1,0,1,2,-1,-4] Output: [[-1,-1,2],[-1,0,1]]"
