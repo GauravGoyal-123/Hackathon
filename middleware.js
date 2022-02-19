@@ -5,7 +5,7 @@ module.exports.problemValidate=(req,res,next)=>{
     const {error} = problemSchema.validate({topic,level,lang,statement,example});
     if(error){
         const msg = error.details.map((e)=>e.message).join(',');
-        res.status(500).render('error',{err:msg});
+        return res.status(500).render('error',{err:msg});
     }
     next();
 }
@@ -15,7 +15,7 @@ module.exports.discussValidate=(req,res,next)=>{
     const {error} = discussSchema.validate({description,exp});
     if(error){
         const msg = error.details.map((e)=>e.message).join(',');
-        res.status(500).render('error',{err:msg});
+        return res.status(500).render('error',{err:msg});
     }
     next();
 }
