@@ -1,6 +1,8 @@
 const express=require('express');
 const router=express.Router();
 const User=require('../models/user');
+const Problem=require('../models/problems');
+const Discuss = require('../models/discuss')
 const passport = require('passport');
 
 router.get('/signup',(req,res)=>{
@@ -25,6 +27,7 @@ router.get('/login',(req,res)=>{
 })
 
 router.post('/login',passport.authenticate('local',{ failureRedirect:'/login', failureFlash:true}),async(req,res)=>{
+    
     req.flash('success',"Welcome back!!!!");
     res.redirect('/problem');
 })
@@ -33,6 +36,11 @@ router.get('/logout',(req,res)=>{
     req.logout();
     req.flash('success',"You logout successfully!!!!");
     res.redirect('/problem');
+})
+
+router.get('/profile',async(req,res)=>{
+    const user = await User.findById(req.user._id);
+    res.render('problem/userdetail',{user});
 })
 
 module.exports=router;

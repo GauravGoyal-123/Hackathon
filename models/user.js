@@ -5,7 +5,21 @@ const userSchema = new mongoose.Schema({
         type:String,
         trim:true,
         required:true,
-    }
+    },
+    ans:[
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref:'Discuss'
+
+        }
+    ],
+    ques:[
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref:'Problem'
+
+        }
+    ]
 })
 userSchema.plugin(passportLocalMongoose);
 const User=mongoose.model('User',userSchema);

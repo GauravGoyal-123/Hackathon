@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Problem = require('../models/problems');
 const {problemValidate,isLoggedIn} = require('../middleware');
+const User = require('../models/user');
+const passport = require('passport');
 
 router.get('/problem',async(req,res)=>{
     try{
@@ -28,7 +30,13 @@ router.get('/newproblem',isLoggedIn,(req,res)=>{
 router.post('/problem',problemValidate,async(req,res)=>{
     try{
         const {topic,level,lang,statement,example} = req.body;
-        await Problem.create({topic,level,lang,statement,example});
+        // await Problem.create({topic,level,lang,statement,example});
+        const user = await User.findById(req.user._id);
+        const prblm = new Problem({topic,level,lang,statement,example});
+        user.ques.push(prblm);
+        await prblm.save();
+        await user.save();
+        // console.log(user);
         req.flash('success',"Add a new problem successfully!!!!");
         res.redirect('/problem');
     }

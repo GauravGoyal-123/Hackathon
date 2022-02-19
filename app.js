@@ -8,6 +8,7 @@ const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
+const methodOverride = require('method-override');
 
 mongoose.connect('mongodb://localhost:27017/doubtaway')
     .then(()=> console.log("DB connected"))
@@ -19,6 +20,7 @@ app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
 app.use(express.urlencoded({urlencoded:true}));
 app.use(express.static(path.join(__dirname,'public')));
+app.use(methodOverride('_method'))
     
 const sessionConfig = {
     secret: 'keyboard cat',
@@ -56,7 +58,6 @@ app.get('/',(req,res)=>{
 const problemRouter = require('./routes/problem');
 const discussRouter = require('./routes/discuss');
 const userRouter = require('./routes/user');
-const { date } = require('joi');
 
 app.use(problemRouter);
 app.use(discussRouter);
