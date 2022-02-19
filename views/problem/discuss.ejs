@@ -22,21 +22,29 @@
 
 <section>
     <div>
-        Discuss Section
         <div class="container-fluid">
             <%for(let dis of prblm.discuss){%>
             <div class="discuss-head">
                 <div>
-                    <p><a style="text-decoration: none; color: black;" href="/problem/discuss/<%=dis._id%>">
-                        <h3><%=dis.description%></h3>
-                        </a>
-                    </p>
+                  <div class="card" style="background-color: rgb(238, 202, 159);">
+                    <div class="card-body">
+                      <blockquote class="blockquote mb-0">
+                        <p><a style="text-decoration: none; color: rgb(32, 30, 30);" href="/problem/discuss/<%=dis._id%>">
+                          <h3><%=dis.description%></h3>
+                          </a>
+                      </p>
+                        <footer class="blockquote-footer"> <div>
+                          <%if(dis.createdAt){%>
+                              <p style="color: rgb(99, 86, 86);">Created at: <%=dis.createdAt.toDateString()%></p>
+                          <%}%>
+                      </div>
+                    </footer>
+                      </blockquote>
+                    </div>
+                  </div>
+                    
                 </div>
-                    <div>
-                    <%if(dis.createdAt){%>
-                        <p><%=dis.createdAt.toDateString()%></p>
-                    <%}%>
-                </div>
+                   
             </div>
             <%}%>
         </div>

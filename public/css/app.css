@@ -142,9 +142,8 @@ text-shadow: 1px 1px 1px #d6ce93;
 }
 
 .discuss-head{
-    border: 1px solid black;
-    padding: 10px;
-    width: 90%;
+    padding: 5px;
+    margin:10px;
     color: black;
 }
 
