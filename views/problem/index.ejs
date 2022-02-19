@@ -1,7 +1,8 @@
 <%layout('layouts/boilerplate')-%>
 <div class="row">
-    <div class="col-lg-2 m-4 topic">
+    <div class="col-lg-2 m-2 topic">
         <h2>Topic</h2>
+        <i class="fa-solid fa-users"></i>
         <hr>
         <ul style="list-style: none;" class="topicname">
             <li><a href="/problem/array">Array</a></li>
@@ -19,15 +20,12 @@
 
    <div class="col-lg-8 m-2">
         <%-include('../partials/flash')%>
-        <div class="row m-4">
-            <div class="col-lg-6">
+        <div class="row m-2">
+            <div class="col-lg-10">
                 <h1 class="heading">Let your Doubts</h1>
                 <h2 class="heading">Fly Away...</h2>
-                <button style="color: #66F6F1; font-size: 30px; border-radius: 30px;" type="button" class="btn btn-dark"><a style="text-decoration: none; color: white;" href="/newproblem">Ask your Question</a></button>
-            </div>
-            <div class="col-lg-6 my-4">
-                <img height="200px" src="https://www.linkpicture.com/q/pic_22.jpg"
-                alt="">
+                <h3 style="font-size: 25px;">Turn in to acclerate your programing in right direction</h3>
+                <button style="font-size: 30px; border-radius: 30px; background-color: rgb(243, 151, 212);" type="button" class="btn btn-dark"><a style="text-decoration: none; color: black;" href="/newproblem">Ask your Question</a></button>
             </div>
 
         </div>
@@ -62,7 +60,7 @@
 
                         </div>
                         <div class="col-lg-2">
-                            <button style=" font-size: 1.1rem; font-family: cursive; font-weight: bold; box-shadow: 1px 1px 1px #6f797c;"" type="button" class="btn btn-dark"><a style="text-decoration: none; color: white;" href="/problem/<%=p._id%>/answer">Answer</a></button>
+                            <button style=" font-size: 1.1rem; font-family: cursive; font-weight: bold; background-color: azure;"" type="button" class="btn btn-dark"><a style="text-decoration: none; color: rgb(26, 25, 25);" href="/problem/<%=p._id%>/answer">Answer</a></button>
                         </div>
                     </div>
                 </ul>
