@@ -2,19 +2,23 @@ const express = require('express');
 const router = express.Router();
 const Problem = require('../models/problems');
 const Discuss = require('../models/discuss');
+const User = require('../models/user');
 const {discussValidate,isLoggedIn} = require('../middleware');
 
 router.post('/problem/:id/discuss',isLoggedIn,discussValidate,async(req,res)=>{
     try{
         const {id} = req.params; 
-        console.log(req.body);
+        // console.log(req.body);
         const {description,exp} = req.body;
         const prblm = await Problem.findById(id);
         const dis = new Discuss({description,exp});
+        const user = await User.findById(req.user._id);
+        user.ans.push(dis);
         prblm.discuss.push(dis);
         await dis.save();
         await prblm.save();
-        console.log(dis);
+        await user.save();
+        console.log(user);
         req.flash('success',"Add a new answer successfully!!!!");
         res.redirect(`/problem/${id}/discuss`);
     }
