@@ -1,8 +1,26 @@
 <%layout('layouts/boilerplate')-%>
+<nav>
+    <div class="row my-4">
+      <div class="col-lg-3 my-4 mx-3">
+        <h2 class="multicolortext">DoubtAway..</h2>
+      </div>
+      <div class="col-lg-6 my-4 mx-4 community" style="width: 35%;">
+        <span><a href="/">Home</a></span>
+        <span><a href="/problem">Community</a></span>
+        <span><a href="/newproblem">Ask a question</a></span>
+      </div>
+      <div class="col-lg-2 my-4 login" style="margin-left: 150px;">
+        <%if(!currentUser){%>
+          <span><a href="/login">Login</a></span>
+       <%}else{%>
+        <span><a href="/logout">Logout</a></span>
+       <%}%>
+      </div>
+    </div>
+  </nav>
 <div class="row">
     <div class="col-lg-2 m-2 topic">
         <h2>Topic</h2>
-        <i class="fa-solid fa-users"></i>
         <hr>
         <ul style="list-style: none;" class="topicname">
             <li><a href="/problem/array">Array</a></li>
@@ -13,15 +31,21 @@
             <li><a href="/problem/queue">Queue</a></li>
             <li><a href="/problem/trees">Trees</a></li>
             <li><a href="/problem/graphs">Graphs</a></li>
-            
         </ul>
+        <h2>Level</h2>
+        <hr>
+        <ul style="list-style: none;" class="topicname">
+            <li><a href="/problem/easy">Easy</a></li>
+            <li><a href="/problem/mrdium">Medium</a></li>
+            <li><a href="/problem/difficult">Difficult</a></li>
+        </ul>    
     </div>
         
 
    <div class="col-lg-8 m-2">
         <%-include('../partials/flash')%>
         <div class="row m-2">
-            <div class="col-lg-10">
+            <div class="col-lg-10 mb-4">
                 <h1 class="heading">Let your Doubts</h1>
                 <h2 class="heading">Fly Away...</h2>
                 <h3 style="font-size: 25px;">Turn in to acclerate your programing in right direction</h3>
@@ -47,7 +71,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-lg-12 md-12 pro" style="font-weight: bolder;">
+                            <div class="col-lg-12 md-12 pro">
                                 <p><%=p.statement.substring(0,200)%>...</p>
                             </div>
 
