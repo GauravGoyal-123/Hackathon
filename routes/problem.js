@@ -62,7 +62,7 @@ router.get('/problem/array',async(req,res)=>{
     try{
         const problem=await Problem.find({});
         const array=problem.filter((p)=>p.topic==='Array');
-        res.send(array);
+        res.render('problem/array',{array});
     }
     catch(e){
         res.status(500).render("error",{err:e.message});
