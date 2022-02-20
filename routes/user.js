@@ -4,6 +4,7 @@ const User=require('../models/user');
 const Problem=require('../models/problems');
 const Discuss = require('../models/discuss')
 const passport = require('passport');
+const {isLoggedIn} = require('../middleware');
 
 router.get('/signup',(req,res)=>{
     res.render('auth/signup');
@@ -38,7 +39,7 @@ router.get('/logout',(req,res)=>{
     res.redirect('/problem');
 })
 
-router.get('/profile',async(req,res)=>{
+router.get('/profile',isLoggedIn,async(req,res)=>{
     const user = await User.findById(req.user._id);
     res.render('problem/userdetail',{user});
 })
