@@ -68,6 +68,23 @@ router.get('/problem/array',async(req,res)=>{
         res.status(500).render("error",{err:e.message});
     }
     
+});
+
+router.get('/problem/easy',async(req,res)=>{
+    const problem = await Problem.find({});
+    const prblm = problem.filter((p)=>p.level.toUpperCase()==='EASY');
+    res.render('problem/difficulty',{prblm});
 })
 
+router.get('/problem/medium',async(req,res)=>{
+    const problem = await Problem.find({});
+    const prblm = problem.filter((p)=>p.level.toUpperCase()==='MEDIUM');
+    res.render('problem/difficulty',{prblm});
+})
+
+router.get('/problem/hard',async(req,res)=>{
+    const problem = await Problem.find({});
+    const prblm = problem.filter((p)=>p.level.toUpperCase()==='HARD');
+    res.render('problem/difficulty',{prblm});
+})
 module.exports=router;
