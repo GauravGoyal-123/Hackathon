@@ -29,13 +29,13 @@ router.get('/login',(req,res)=>{
 
 router.post('/login',passport.authenticate('local',{ failureRedirect:'/login', failureFlash:true}),async(req,res)=>{
     
-    req.flash('success',"Welcome back!!!!");
+    req.flash('success',`Welcome back ${req.user.username} !!!!`);
     res.redirect('/problem');
 })
 
 router.get('/logout',(req,res)=>{
     req.logout();
-    req.flash('success',"You logout successfully!!!!");
+    req.flash('success',"Logged Out!!!!");
     res.redirect('/problem');
 })
 
