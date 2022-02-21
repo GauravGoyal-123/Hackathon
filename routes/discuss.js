@@ -36,8 +36,9 @@ router.get('/problem/:id/discuss',async(req,res)=>{
     } 
 })
 
-router.get('/problem/discuss/:discuss_id',async(req,res)=>{
+router.get('/problem/:id/discuss/:discuss_id',async(req,res)=>{
     try{
+        const {id} = req.params
         const {discuss_id} = req.params;
         const prblmdis = await Discuss.findById(discuss_id);
         const exp= prblmdis.exp;
