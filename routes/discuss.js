@@ -8,7 +8,6 @@ const {discussValidate,isLoggedIn} = require('../middleware');
 router.post('/problem/:id/discuss',isLoggedIn,discussValidate,async(req,res)=>{
     try{
         const {id} = req.params; 
-        // console.log(req.body);
         const {description,exp} = req.body;
         const prblm = await Problem.findById(id);
         const dis = new Discuss({description,exp});
@@ -18,7 +17,6 @@ router.post('/problem/:id/discuss',isLoggedIn,discussValidate,async(req,res)=>{
         await dis.save();
         await prblm.save();
         await user.save();
-        console.log(user);
         req.flash('success',"Add a new answer successfully!!!!");
         res.redirect(`/problem/${id}/discuss`);
     }
