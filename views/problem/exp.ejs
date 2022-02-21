@@ -1,4 +1,41 @@
 <%layout('layouts/boilerplate')-%>
+<nav>
+    <div class="row my-4">
+      <div class="col-lg-3 my-4 mx-3">
+        <h2 class="multicolortext">DoubtAway..</h2>
+      </div>
+      <div class="col-lg-6 my-4 mx-4 community" style="width: 35%;">
+        <span><a href="/problem">Problem</a></span>
+        <!-- <span><a href="/problem/<%=prblmdis._id%>/discuss">Description</a></span> -->
+        <span><a href="/problem/discuss/<%=prblmdis._id%>">Discuss</a></span>
+        <span><a href="/profile">Profile</a></span>
+      </div>
+      <div class="col-lg-2 my-4 login" style="margin-left: 150px;">
+        <%if(!currentUser){%>
+          <span><a href="/login">Login</a></span>
+       <%}else{%>
+        <span><a href="/logout">Logout</a></span>
+       <%}%>
+      </div>
+    </div>
+  </nav>
+
+<div class="row">
+    <div class="col-lg-6">
+        <!-- <div class="card" style="width: 30rem;">
+            <div class="card-header" style="color: black; font-size: 1.5rem;">
+                <%=prblmdis.description%>
+            </div>
+            <ul class="list-group list-group-flush" style="color: black; font-size: 1.2rem;">
+                <pre><%=prblmdis.exp%></pre>
+            </ul>
+          </div> -->
+          <div class="p-3 mb-2 bg-secondary text-white"><%=prblmdis.description%></div>
+          <!-- <div class=".bg-secondary.bg-gradient"><%=prblmdis.description%></div> -->
+<div class="p-3 mb-2 bg-white text-dark"> <pre><%=prblmdis.exp%></pre></div>
+
+    </div>
+
+</div>
 
 
-<pre><%=exp%></pre>
