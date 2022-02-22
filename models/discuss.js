@@ -11,6 +11,9 @@ const discussSchema = mongoose.Schema({
     },
     userName:{
         type:String,
+    },
+    problemid:{
+        type:String,
     }
 },{timestamps:true});
 
