@@ -1,9 +1,9 @@
 <%layout('layouts/boilerplate')-%>
 
 <div class="row container-fluid" style="overflow-y: hidden;">
-    <div class="col-lg-4 md-2 sm-2 xs-1 mx-auto m-2">
+    <div class="col-lg-4 md-2 sm-2 xs-1 mx-auto" style="border: 1px solid white; padding: 20px; margin-top: 140px;">
         <%- include('../partials/flash')  %> 
-        <h1 class="dispaly-6 my-4">Sign Up</h1>
+        <h1 class="dispaly-6" style="text-align: center;">Sign Up</h1>
         <form action="/register" class="validated-form" method="POST"  novalidate>
             <div class="mb-3 d-flex justify-content-center align-item-center">
                 <i class="fas fa-user icon"></i>
@@ -17,7 +17,7 @@
                 <i class="fas fa-lock icon"></i>
                 <input class="form-control" type="password" name="password" id="password" placeholder="Password">
             </div>
-            <button class="btn btn-success btn-sm" type="submit">SignUp</button>
+            <button class="btn btn-success btn-sm" style="margin-left: 35px;" type="submit">SignUp</button>
         </form>
     </div>
 </div>
