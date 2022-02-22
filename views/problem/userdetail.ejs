@@ -1,4 +1,16 @@
 <%layout('layouts/boilerplate')-%>
 
-<div><strong>Ques asked</strong>:<strong><%=user.ques.length%></strong></div>
-<div><strong>Ques solved</strong>:<strong><%=user.ans.length%></strong></div>
+<div class="mb-3"><strong>Ques asked</strong>:<strong><%=user.ques.length%></strong></div>
+<div class="mb-3"><strong>Ques solved</strong>:<strong><%=user.ans.length%></strong></div>
+<h3>Question Asked</h3>
+<div class="mb-3">
+    <%for(let q of user.ques){%>
+        <p><a href="/problem/<%=q._id%>/answer"><%=q.statement%></a> </p>
+    <%}%>
+</div>
+<h3>Question Solved</h3>
+<!-- <div class="mb-3">
+    <%for(let a of user.ans){%>
+        <p><a href="/problem/<%=a._id%>/discuss"><%=a.exp%></a> </p>
+    <%}%>
+</div> -->
