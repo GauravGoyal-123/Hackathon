@@ -40,7 +40,7 @@ router.get('/logout',(req,res)=>{
 })
 
 router.get('/profile',isLoggedIn,async(req,res)=>{
-    const user = await User.findById(req.user._id);
+    const user = await User.findById(req.user._id).populate('ans').populate('ques');
     res.render('problem/userdetail',{user});
 })
 

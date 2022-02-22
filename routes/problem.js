@@ -8,7 +8,9 @@ const passport = require('passport');
 router.get('/problem',async(req,res)=>{
     try{
         const prblm = await Problem.find({});
-        // time stamp;
+        prblm.sort(function(x, y){
+            return x.timestamp - y.timestamp;
+        })
         res.render('problem/index',{prblm});
     }
     catch(e){
