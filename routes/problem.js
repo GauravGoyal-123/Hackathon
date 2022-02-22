@@ -58,20 +58,6 @@ router.get('/problem/:id/answer',async(req,res)=>{
     }
 })
 
-
-
-router.get('/problem/array',async(req,res)=>{
-    try{
-        const problem=await Problem.find({});
-        const array=problem.filter((p)=>p.topic==='Array');
-        res.render('problem/array',{array});
-    }
-    catch(e){
-        res.status(500).render("error",{err:e.message});
-    }
-    
-});
-
 router.get('/problem/easy',async(req,res)=>{
     const problem = await Problem.find({});
     const prblm = problem.filter((p)=>p.level.toUpperCase()==='EASY');

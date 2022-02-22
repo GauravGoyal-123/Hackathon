@@ -7,41 +7,70 @@ const passport = require('passport');
 const {isLoggedIn} = require('../middleware');
 
 router.get('/signup',(req,res)=>{
-    res.render('auth/signup');
+    try{
+        res.render('auth/signup');
+    }    
+    catch(e){
+        res.status(500).render("error",{err:e.message});
+    }
 })
 
 router.post('/register',async(req,res)=>{
-    const {username,password,email} = req.body;
-    const user = new User({username,email});
-    const newUser = await User.register(user,password);
-    req.login(newUser, function(err) {
-        if (err){
-            return next(err);
-        }
-        req.flash('success', 'Welcome , You are Registered Successfully');
-        return res.redirect('/problem');
-    });
+    try{
+        const {username,password,email} = req.body;
+        const user = new User({username,email});
+        const newUser = await User.register(user,password);
+        req.login(newUser, function(err) {
+            if (err){
+                return next(err);
+            }
+            req.flash('success', 'Welcome , You are Registered Successfully');
+            return res.redirect('/problem');
+        });
+    }    
+    catch(e){
+        res.status(500).render("error",{err:e.message});
+    }
 })
 
 router.get('/login',(req,res)=>{
-    res.render('auth/login');
+    try{
+        res.render('auth/login');
+    }
+    catch(e){
+        res.status(500).render("error",{err:e.message});
+    }
 })
 
 router.post('/login',passport.authenticate('local',{ failureRedirect:'/login', failureFlash:true}),async(req,res)=>{
-    
-    req.flash('success',`Welcome back ${req.user.username} !!!!`);
-    res.redirect('/problem');
+    try{
+        req.flash('success',`Welcome back ${req.user.username} !!!!`);
+        res.redirect('/problem');
+    }
+    catch(e){
+        res.status(500).render("error",{err:e.message});
+    }
 })
 
 router.get('/logout',(req,res)=>{
-    req.logout();
-    req.flash('success',"Logged Out!!!!");
-    res.redirect('/problem');
+    try{
+        req.logout();
+        req.flash('success',"Logged Out!!!!");
+        res.redirect('/problem');
+    }
+    catch(e){
+        res.status(500).render("error",{err:e.message});
+    }
 })
 
 router.get('/profile',isLoggedIn,async(req,res)=>{
-    const user = await User.findById(req.user._id).populate('ans').populate('ques');
-    res.render('problem/userdetail',{user});
+    try{
+        const user = await User.findById(req.user._id).populate('ans').populate('ques');
+        res.render('problem/userdetail',{user});
+    }
+    catch(e){
+        res.status(500).render("error",{err:e.message});
+    }
 })
 
 module.exports=router;

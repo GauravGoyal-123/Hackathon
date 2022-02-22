@@ -34,22 +34,24 @@
                       <button class="cn"><a href="/newproblem">Ask Question</a></button>
                       <button class="cn"><a href="/problem">Answer Doubts</a></button>
             </div>
-            <div class="col-lg-4">
-                <form action="/login" method="POST" >
-                    <div class="form">
-                        <h2>Have an Account ?</h2>
-                        <input  type="text" name="username" id="username" placeholder="Username">
-                        <input type="password" name="password" id="password" placeholder="Password">
-                        <button class="btnn"><a style="color: black;" href="/login">Login</a></button>
-    
-                        <p style="font-weight: bolder;" class="link">Don't have an account<br>
-                        <a href="/signup">Sign up </a> here</a></p>
-    
-                    </div>
-                </form>
-                
-            </div>
-
+            
+            <%if(!currentUser){%>
+                <div class="col-lg-4">
+                    <form action="/login" method="POST" >
+                        <div class="form">
+                            <h2>Have an Account ?</h2>
+                            <input  type="text" name="username" id="username" placeholder="Username">
+                            <input type="password" name="password" id="password" placeholder="Password">
+                            <button class="btnn"><a style="color: black;" href="/login">Login</a></button>
+        
+                            <p style="font-weight: bolder;" class="link">Don't have an account<br>
+                            <a href="/signup">Sign up </a> here</a></p>
+        
+                        </div>
+                    </form>
+                    
+                </div>
+            <%}%>
     </div>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 </body>

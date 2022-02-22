@@ -13,7 +13,6 @@ router.post('/problem/:id/discuss',isLoggedIn,discussValidate,async(req,res)=>{
         const userName = req.user.username;
         const problemid=id;
         const dis = new Discuss({description,exp,userName,problemid});
-        console.log(dis);
         const user = await User.findById(req.user._id);
         user.ans.push(dis);
         prblm.discuss.push(dis);
@@ -32,7 +31,7 @@ router.get('/problem/:id/discuss',async(req,res)=>{
     try{
         const {id}=req.params;
         const prblm=await Problem.findById(id).populate('discuss');
-        Array.prototype.reverse.call(prblm);
+        // Array.prototype.reverse.call(prblm);
         res.render('problem/discuss',{prblm});
     }
     catch(e){
