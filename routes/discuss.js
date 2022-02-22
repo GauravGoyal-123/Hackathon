@@ -32,6 +32,7 @@ router.get('/problem/:id/discuss',async(req,res)=>{
     try{
         const {id}=req.params;
         const prblm=await Problem.findById(id).populate('discuss');
+        Array.prototype.reverse.call(prblm);
         res.render('problem/discuss',{prblm});
     }
     catch(e){
