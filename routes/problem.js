@@ -8,9 +8,6 @@ const passport = require('passport');
 router.get('/problem',async(req,res)=>{
     try{
         const prblm = await Problem.find({});
-        prblm.sort(function(x, y){
-            return x.timestamp - y.timestamp;
-        })
         res.render('problem/index',{prblm});
     }
     catch(e){
@@ -32,13 +29,11 @@ router.get('/newproblem',isLoggedIn,(req,res)=>{
 router.post('/problem',problemValidate,async(req,res)=>{
     try{
         const {topic,level,lang,statement,example} = req.body;
-        // await Problem.create({topic,level,lang,statement,example});
         const user = await User.findById(req.user._id);
         const prblm = new Problem({topic,level,lang,statement,example});
         user.ques.push(prblm);
         await prblm.save();
         await user.save();
-        // console.log(user);
         req.flash('success',"Add a new problem successfully!!!!");
         res.redirect('/problem');
     }
@@ -58,21 +53,27 @@ router.get('/problem/:id/answer',async(req,res)=>{
     }
 })
 
-router.get('/problem/easy',async(req,res)=>{
-    const problem = await Problem.find({});
-    const prblm = problem.filter((p)=>p.level.toUpperCase()==='EASY');
-    res.render('problem/difficulty',{prblm});
-})
+router.get('/problem/:diff',async(req,res)=>{
+    try{
+        const {diff} = req.params;
+        const problem = await Problem.find({});
+        const prblm = problem.filter((p)=>p.level===diff);
+        res.render('problem/difficulty',{prblm,diff});
+    }
+    catch(e){
+        res.status(500).render("error",{err:e.message});
+    }
+});
 
-router.get('/problem/medium',async(req,res)=>{
-    const problem = await Problem.find({});
-    const prblm = problem.filter((p)=>p.level.toUpperCase()==='MEDIUM');
-    res.render('problem/difficulty',{prblm});
-})
-
-router.get('/problem/hard',async(req,res)=>{
-    const problem = await Problem.find({});
-    const prblm = problem.filter((p)=>p.level.toUpperCase()==='HARD');
-    res.render('problem/difficulty',{prblm});
-})
+router.get('/problem/:topic',async(req,res)=>{
+    try{
+        const {topic}=req.params;
+        const problem=await Problem.find({});
+        const prblm=problem.filter((p)=>p.topic===topic);
+        res.render('problem/topic',{prblm,topic});
+    }
+    catch(e){
+        res.status(500).render("error",{err:e.message});
+    }
+});
 module.exports=router;

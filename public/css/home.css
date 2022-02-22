@@ -305,7 +305,7 @@ animation-iteration-count: 1;
     content :'Hashmap';
 }
 100%{
-    content :'greedy';
+    content :'Greedy';
 }
   
   
