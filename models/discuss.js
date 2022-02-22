@@ -8,6 +8,12 @@ const discussSchema = mongoose.Schema({
     exp:{
         type:String,
         trim:true,
+    },
+    userName:{
+        type:String,
+    },
+    problemid:{
+        type:String,
     }
 },{timestamps:true});
 
