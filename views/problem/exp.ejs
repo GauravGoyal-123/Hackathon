@@ -5,12 +5,12 @@
         <h2 class="multicolortext">DoubtAway..</h2>
       </div>
       <div class="col-lg-6 my-4 mx-4 community" style="width: 35%;">
-        <span><a href="/problem">Problem</a></span>
+        <span><a href="/problem">Problems</a></span>
         <span><a href="/problem/<%=id%>/answer">Description</a></span>
-        <span><a href="/problem/<%=id%>/discuss">Discuss</a></span>
-        <span><a href="/profile">Profile</a></span>
+        <span><a href="/problem/<%=id%>/discuss">Discussion</a></span>
       </div>
       <div class="col-lg-2 my-4 login" style="margin-left: 150px;">
+        <span><a href="/profile">Profile</a></span>
         <%if(!currentUser){%>
           <span><a href="/login">Login</a></span>
        <%}else{%>
@@ -22,17 +22,14 @@
 
 <div class="row">
     <div class="col-lg-6">
-        <!-- <div class="card" style="width: 30rem;">
+        <div class="card mb-4" style="width: 60rem;">
             <div class="card-header" style="color: black; font-size: 1.5rem;">
                 <%=prblmdis.description%>
             </div>
-            <ul class="list-group list-group-flush" style="color: black; font-size: 1.2rem;">
+            <ul class="list-group list-group-flush" style="color: black; font-size: 1.2rem; padding: 50px;">
                 <pre><%=prblmdis.exp%></pre>
             </ul>
-          </div> -->
-          <div class="p-3 mb-2 bg-secondary text-white"><%=prblmdis.description%></div>
-          <!-- <div class=".bg-secondary.bg-gradient"><%=prblmdis.description%></div> -->
-<div class="p-3 mb-2 bg-white text-dark"> <pre><%=prblmdis.exp%></pre></div>
+          </div>
 
     </div>
 

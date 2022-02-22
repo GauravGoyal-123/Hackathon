@@ -1,6 +1,6 @@
 <%layout('layouts/boilerplate')-%>
 <nav>
-    <div class="row my-4">
+    <div class="row my-3">
       <div class="col-lg-3 my-4 mx-3">
         <h2 class="multicolortext">DoubtAway..</h2>
       </div>
@@ -19,29 +19,36 @@
     </div>
   </nav>
 <section>
-    <h1>New Problem</h1>
-    <section>
+    <section class="container" style=" padding: 2rem; width: 60%; text-transform: capitalize; font-family: cursive;">
         <form action="/problem" method="post" class="validated-form" novalidate>
-            <div class="mb-3">
-                <label class="form-label" for="topic">Topic :</label>
-                <input class="form-control" type="text" name="topic" id="topic" placeholder="Topic" required>
+            <div class="mb-4">
+                <input style="text-transform: capitalize; font-size: 1.1rem;" class="form-control" type="text" name="topic" id="topic" placeholder="Topic" required>
             </div>
-            <div class="mb-3">
-                <label class="form-label" for="level">level :</label>
+            <!-- <div class="mb-4">
                 <input class="form-control" type="text" name="level" id="level" placeholder="Level" required>
+            </div> -->
+            <div class="mb-4">
+              <span>
+                <span style="font-size: 1.2rem;">LEVEL:    </span>
+                <label class="form-label" for="easy">Easy</label>
+                <input class="form-check-input" type="radio" name="level" value="Easy" id="easy" aria-label="Radio button for following text input" required>
+              </span>
+              <span>
+                <label class="form-label" for="medium">Medium</label>
+              <input class="form-check-input" type="radio" name="level" value="Medium"  id="medium" aria-label="Radio button for following text input" required>
+              </span>
+              <label class="form-label" for="hard">Hard</label>
+              <input class="form-check-input" type="radio" name="level" value="Hard"  id="hard" aria-label="Radio button for following text input" required>
             </div>
-            <div class="mb-3">
-                <label class="form-label" for="lang">Language :</label>
-                <input class="form-control" type="text" name="lang" id="lang" placeholder="Language" required>
+            <div class="mb-4">
+                <input style="text-transform: capitalize; font-size: 1.1rem;" class="form-control" type="text" name="lang" id="lang" placeholder="Language" required>
             </div>
-            <div class="mb-3">
-                <h5>Description</h5>
+            <div class="mb-4">
                 <label class="form-label" for="statement"></label>
-                <textarea class="form-control" name="statement" id="statement" cols="10" rows="8" placeholder="statement"  required></textarea>
-                <label class="form-label" for="example">Custom Input:</label>
-                <textarea class="form-control" name="example" id="example" cols="5" rows="5"  required></textarea>
+                <textarea style="text-transform: capitalize; font-size: 1.1rem;" class="form-control mb-4" name="statement" id="statement" cols="10" rows="8" placeholder="Statement"  required></textarea>
+                <textarea style="text-transform: capitalize; font-size: 1.1rem;" class="form-control" name="example" id="example" cols="5" rows="5" placeholder="Example"  required></textarea>
             </div>
-            <button type="submit" class="btn btn-sm btn-success">Submit</button>
+            <button type="submit" style="background-color: rgb(24, 10, 31); color: rgb(231, 101, 214); font-size: 1.3rem; font-weight: bold; border-radius: 12px; padding: 5px;" class="btn btn-sm btn-dark">Ask question</button>
         </form>
     </section>
 </section>
