@@ -1,3 +1,89 @@
-<%for(let p of prblm){%>
-    <h3><%=p.level%></h3>
-<%}%>
+<%layout('layouts/boilerplate')-%>
+
+<nav>
+    <div class="row my-4">
+      <div class="col-lg-3 my-4 mx-3">
+        <h2 class="multicolortext">DoubtAway..</h2>
+      </div>
+      <div class="col-lg-6 my-4 mx-4 community" style="width: 35%;">
+        <span><a href="/">Home</a></span>
+        <span><a href="/problem">Problems</a></span>
+        <span><a href="/newproblem">Ask a question</a></span>
+        
+      </div>
+      <div class="col-lg-2 my-4 login" style="margin-left: 150px;">
+        <span><a href="/profile">Profile</a></span>
+        <%if(!currentUser){%>
+          <span><a href="/login">Login</a></span>
+       <%}else{%>
+        <span><a href="/logout">Logout</a></span>
+       <%}%>
+      </div>
+    </div>
+  </nav>
+<div class="row">
+    <div class="col-lg-2 m-2 topic">
+        <h2>Topic</h2>
+        <hr>
+        <ul style="list-style: none;" class="topicname">
+            <li><a href="/problem/array">Array</a></li>
+            <li><a href="/problem/strings">Strings</a></li>
+            <li><a href="/problem/recursion">Recursion</a></li>
+            <li><a href="/problem/hashing">Hashing</a></li>
+            <li><a href="/problem/stacks">Stacks</a></li>
+            <li><a href="/problem/queue">Queue</a></li>
+            <li><a href="/problem/trees">Trees</a></li>
+            <li><a href="/problem/graphs">Graphs</a></li>
+        </ul>
+        <h2>Level</h2>
+        <hr>
+        <ul style="list-style: none;" class="topicname">
+            <li><a href="/problem/easy">Easy</a></li>
+            <li><a href="/problem/medium">Medium</a></li>
+            <li><a href="/problem/hard">Hard</a></li>
+        </ul>    
+    </div>
+        
+
+   <div class="col-lg-8 m-2">
+            <%for(let p of prblm){%>
+                <ul class="container ques">
+                    <div>
+                        <div class="row mb-3">
+                            <div class="col-lg-4 head" style="border-right: 1px solid gray;">
+                                Topic: <%=p.topic%>
+                            </div>
+                            <div class="col-lg-4 head" style="border-right: 1px solid gray;">
+                                Language: <%=p.lang%>
+                            </div>
+                            <div class="col-lg-4 head">
+                                Level: <%=p.level%>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12 md-12 pro">
+                                <p><%=p.statement.substring(0,200)%>...</p>
+                            </div>
+
+                        </div>
+                        
+                         
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-10">
+
+                        </div>
+                        <div class="col-lg-2">
+                            <button style=" font-size: 1.1rem; font-family: cursive; font-weight: bold; background-color: azure;"" type="button" class="btn btn-dark"><a style="text-decoration: none; color: rgb(26, 25, 25);" href="/problem/<%=p._id%>/answer">Answer</a></button>
+                        </div>
+                    </div>
+                </ul>
+            <%}%>
+
+    </div>
+
+</div>
+
+

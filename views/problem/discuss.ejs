@@ -6,12 +6,13 @@
         <h2 class="multicolortext">DoubtAway..</h2>
       </div>
       <div class="col-lg-6 my-4 mx-4 community" style="width: 35%;">
-        <span><a href="/problem">Problem</a></span>
-        <span><a href="/problem/<%=prblm._id%>/answer">Discription</a></span>
-        <span><a href="/problem/<%=prblm._id%>/discuss">Discuss</a></span>
-        <span><a href="/profile">Profile</a></span>
+        <span><a href="/problem">Problems</a></span>
+        <span><a href="/problem/<%=prblm._id%>/answer">Description</a></span>
+        <span><a href="/problem/<%=prblm._id%>/discuss">Discussion</a></span>
+      
       </div>
       <div class="col-lg-2 my-4 login" style="margin-left: 150px;">
+        <span><a href="/profile">Profile</a></span>
         <%if(!currentUser){%>
           <span><a href="/login">Login</a></span>
        <%}else{%>
@@ -27,19 +28,20 @@
             <%for(let dis of prblm.discuss){%>
             <div class="discuss-head">
                 <div>
-                  <div class="card" style="background-color: rgb(238, 202, 159);">
+                  <div class="card" style="background-color: rgb(223, 217, 210);">
                     <div class="card-body">
                       <blockquote class="blockquote mb-0">
                         <p><a style="text-decoration: none; color: rgb(32, 30, 30);" href="/problem/<%=prblm._id%>/discuss/<%=dis._id%>">
                           <h3><%=dis.description%></h3>
                           </a>
                       </p>
-                        <footer class="blockquote-footer"> <div>
+                        <!-- <footer class="blockquote-footer"> -->
+                           <div>
                           <%if(dis.createdAt){%>
                               <p style="color: rgb(99, 86, 86);"><%=dis.userName%> on <%=dis.createdAt.toDateString()%></p>
                           <%}%>
                       </div>
-                    </footer>
+                    <!-- </footer> -->
                       </blockquote>
                     </div>
                   </div>
