@@ -81,6 +81,8 @@ main{
 .login{
     border: 2px solid black;
     text-align: center;
+    display: flex;
+    justify-content: end;
 }
 .community a:hover{
     color: rgb(200, 140, 228);
@@ -147,7 +149,7 @@ text-shadow: 1px 1px 1px #d6ce93;
     margin:5px;
     color: black;
 }
-
+  
 .bar{
     /* border: 2px solid white; */
     display: inline-block;

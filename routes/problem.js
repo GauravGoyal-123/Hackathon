@@ -53,7 +53,7 @@ router.get('/problem/:id/answer',async(req,res)=>{
     }
 })
 
-router.get('/problem/:diff',async(req,res)=>{
+router.get('/problem/difficulty/:diff',async(req,res)=>{
     try{
         const {diff} = req.params;
         const problem = await Problem.find({});
