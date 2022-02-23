@@ -10,12 +10,22 @@
         <span><a href="/newproblem">Ask a question</a></span>
       </div>
       <div class="col-lg-4 my-4 login">
-        <span><a href="/profile">Profile</a></span>
-        <%if(!currentUser){%>
+
+        <div class="dropdown">
+            <button class="btn btn-dark dropdown-toggle" style="background-color: transparent; border: none;" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="true">
+                <span><i class="fas fa-user icon"></i></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+              <li><a class="dropdown-item active" href="/profile">Profile</a></li>
+              <li><a class="dropdown-item" href="/logout">Logout</a></li>
+              <li><a class="dropdown-item" href="#"></a></li>
+            </ul>
+          </div>
+        <!-- <%if(!currentUser){%>
           <span><a href="/login">Login</a></span>
        <%}else{%>
         <span><a href="/logout">Logout</a></span>
-       <%}%>
+       <%}%> -->
       </div>
     </div>
   </nav>
