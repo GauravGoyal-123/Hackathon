@@ -23,6 +23,24 @@ main{
     background-clip: text;
     color: transparent;
 }
+#askbutton{
+    white-space: nowrap;
+ border: none;
+ outline: none;
+ height: 40px;
+ width: 150px;
+ background:rgb(240, 62, 91);
+ border-radius: 18px;
+ border:1px solid white;
+ box-shadow: 0 0 5px rgb(248, 26, 93);
+ margin-left: 280px;
+               
+
+}
+
+
+
+
 
 
 .ques li{
