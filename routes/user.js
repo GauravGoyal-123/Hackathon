@@ -66,7 +66,9 @@ router.get('/logout',(req,res)=>{
 router.get('/profile',isLoggedIn,async(req,res)=>{
     try{
         const user = await User.findById(req.user._id).populate('ans').populate('ques');
-        res.render('problem/userdetail',{user});
+        const b=user.ans.length;
+        const a=user.ques.length;
+        res.render('problem/userdetail',{user,a,b});
     }
     catch(e){
         res.status(500).render("error",{err:e.message});
