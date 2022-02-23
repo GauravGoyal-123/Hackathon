@@ -98,8 +98,6 @@ main{
     /* font-family: cursive; */
 }
 .login{
-    border: 2px solid black;
-    text-align: center;
     display: flex;
     justify-content: end;
 }
@@ -112,7 +110,7 @@ font-family: 'Comforter Brush', cursive;
 font-family: 'Josefin Sans', sans-serif;
 font-family: 'Lobster', cursive;
 font-family: 'Luxurious Roman', cursive;
-font-size: 60px;
+font-size: 55px;
 margin: 15px;
 color: #d6ce93;
 text-shadow: 1px 1px 1px #d6ce93;

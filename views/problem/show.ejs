@@ -1,25 +1,32 @@
 <%layout('layouts/boilerplate')-%>
 <nav>
-    <div class="row my-4">
-      <div class="col-lg-3 my-4 mx-3">
-        <h2 class="multicolortext">DoubtAway..</h2>
-      </div>
-      <div class="col-lg-6 my-4 mx-4 community" style="width: 35%;">
-        
-        <span><a href="/problem">Problems</a></span>
-        <span><a href="/problem/<%=prblm._id%>/answer">Description</a></span>
-        <span><a href="/problem/<%=prblm._id%>/discuss">Discussion</a></span>
-      </div>
-      <div class="col-lg-2 my-4 login" style="margin-left: 150px;">
-        <span><a href="/profile">Profile</a></span>
-        <%if(!currentUser){%>
-          <span><a href="/login">Login</a></span>
-       <%}else{%>
-        <span><a href="/logout">Logout</a></span>
-       <%}%>
-      </div>
+  <div class="row my-4">
+    <div class="col-lg-3 my-4 mx-3">
+      <h2 class="multicolortext">DoubtAway..</h2>
     </div>
-  </nav>
+    <div class="col-lg-4 my-4 community">
+      <span><a href="/problem">Problems</a></span>
+      <span><a href="/problem/<%=prblm._id%>/answer">Description</a></span>
+      <span><a href="/problem/<%=prblm._id%>/discuss">Discussion</a></span>
+    </div>
+    <div class="col-lg-4 my-4 login">
+
+      <div class="dropdown">
+          <button class="btn btn-dark dropdown-toggle" style="background-color: transparent; border: 1px solid white;" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="true">
+              <span><i class="fas fa-user icon"></i></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-transparent" aria-labelledby="dropdownMenuButton2">
+            <li><a class="dropdown-item" href="/profile">Profile</a></li>
+            <%if(!currentUser){%>
+              <li><a class="dropdown-item" href="/">Login</a></li>
+            <%}else{%>
+              <li><a class="dropdown-item" href="/logout">Logout</a></li>
+            <%}%>
+          </ul>
+        </div>
+    </div>
+  </div>
+</nav>
 <div class="row container-fluid">
     
     <div>
@@ -60,3 +67,5 @@
     </form>
     
 </div>
+
+

@@ -1,7 +1,100 @@
-<h2><%=topic%></h2>
-<%for(let a of prblm){%>    
-    <p><%=a.statement%></p>
-<%}%>
+<%layout('layouts/boilerplate')-%>
+
+<nav>
+    <div class="row my-4">
+      <div class="col-lg-3 my-4 mx-3">
+        <h2 class="multicolortext">DoubtAway..</h2>
+      </div>
+      <div class="col-lg-4 my-4 community">
+        <span><a href="/">Home</a></span>
+        <span><a href="/problem">Problems</a></span>
+        <span><a href="/newproblem">Ask a question</a></span>
+      </div>
+      <div class="col-lg-4 my-4 login">
+
+        <div class="dropdown">
+            <button class="btn btn-dark dropdown-toggle" style="background-color: transparent; border: 1px solid white;" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="true">
+                <span><i class="fas fa-user icon"></i></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-transparent" aria-labelledby="dropdownMenuButton2">
+              <li><a class="dropdown-item" href="/profile">Profile</a></li>
+              <%if(!currentUser){%>
+                <li><a class="dropdown-item" href="/">Login</a></li>
+              <%}else{%>
+                <li><a class="dropdown-item" href="/logout">Logout</a></li>
+              <%}%>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </nav>
+<div class="row">
+    <div class="col-lg-2 m-2 topic">
+        <h2>Topic</h2>
+        <hr>
+        <ul style="list-style: none;" class="topicname">
+            <li><a href="/problem/Array">Array</a></li>
+            <li><a href="/problem/Strings">Strings</a></li>
+            <li><a href="/problem/Recursion">Recursion</a></li>
+            <li><a href="/problem/Hashing">Hashing</a></li>
+            <li><a href="/problem/Stacks">Stacks</a></li>
+            <li><a href="/problem/Queue">Queue</a></li>
+            <li><a href="/problem/Trees">Trees</a></li>
+            <li><a href="/problem/Graphs">Graphs</a></li>
+        </ul>
+        <h2>Level</h2>
+        <hr>
+        <ul style="list-style: none;" class="topicname">
+            <li><a href="/problem/difficulty/Easy">Easy</a></li>
+            <li><a href="/problem/difficulty/Medium">Medium</a></li>
+            <li><a href="/problem/difficulty/Hard">Hard</a></li>
+        </ul>    
+    </div>
+        
+
+   <div class="col-lg-8 m-2">
+       <h2>Topic : <%=topic%></h2>
+            <%for(let p of prblm){%>
+                <ul class="container ques">
+                    <div>
+                        <div class="row mb-3">
+                            <div class="col-lg-4 head" style="border-bottom: 1px dashed rgb(209, 208, 208);  color: rgb(243, 198, 75);">
+                                Topic: <%=p.topic%>
+                            </div>
+                            <div class="col-lg-4 head" style="border-bottom: 1px dashed rgb(209, 208, 208);  color: rgb(243, 198, 75);">
+                                Language: <%=p.lang%>
+                            </div>
+                            <div class="col-lg-4 head" style="border-bottom: 1px dashed rgb(209, 208, 208);  color: rgb(243, 198, 75);">
+                                Level: <%=p.level%>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12 md-12 pro">
+                                <p><%=p.statement.substring(0,200)%>...</p>
+                            </div>
+
+                        </div>
+                        
+                         
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-10">
+
+                        </div>
+                        <div class="col-lg-2">
+                            <button style=" font-size: 1.1rem; font-family: cursive; font-weight: bold; background-color: azure;"" type="button" class="btn btn-dark"><a style="text-decoration: none; color: rgb(26, 25, 25);" href="/problem/<%=p._id%>/answer">Answer</a></button>
+                        </div>
+                    </div>
+                </ul>
+            <%}%>
+
+    </div>
+
+</div>
+
+
 
 
 

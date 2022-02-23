@@ -12,20 +12,18 @@
       <div class="col-lg-4 my-4 login">
 
         <div class="dropdown">
-            <button class="btn btn-dark dropdown-toggle" style="background-color: transparent; border: none;" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="true">
+            <button class="btn btn-dark dropdown-toggle" style="background-color: transparent; border: 1px solid white;" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="true">
                 <span><i class="fas fa-user icon"></i></span>
             </button>
-            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-              <li><a class="dropdown-item active" href="/profile">Profile</a></li>
-              <li><a class="dropdown-item" href="/logout">Logout</a></li>
-              <li><a class="dropdown-item" href="#"></a></li>
+            <ul class="dropdown-menu dropdown-menu-transparent" aria-labelledby="dropdownMenuButton2">
+              <li><a class="dropdown-item" href="/profile">Profile</a></li>
+              <%if(!currentUser){%>
+                <li><a class="dropdown-item" href="/">Login</a></li>
+              <%}else{%>
+                <li><a class="dropdown-item" href="/logout">Logout</a></li>
+              <%}%>
             </ul>
           </div>
-        <!-- <%if(!currentUser){%>
-          <span><a href="/login">Login</a></span>
-       <%}else{%>
-        <span><a href="/logout">Logout</a></span>
-       <%}%> -->
       </div>
     </div>
   </nav>
@@ -53,20 +51,20 @@
     </div>
         
 
-   <div class="col-lg-8 m-2">
+   <div class="col-lg-8">
         <%-include('../partials/flash')%>
         <div class="row m-2">
             <div class="col-lg-10 mb-4">
                 <h1 class="heading">Let your Doubts</h1>
-                <h2 class="heading">Fly Away...</h2>
-                <h3 style="font-size: 25px;">Turn in to acclerate your programing in right direction</h3>
-                <button style="font-size: 30px; border-radius: 30px; background-color: rgb(243, 151, 212);" type="button" class="btn btn-dark" id="askbutton"><a  style="text-decoration: none; color: black;" href="/newproblem">Ask your Question</a></button>
+                <h1 class="heading">Fly Away...</h1>
+                <!-- <h3 style="font-size: 25px;">Turn in to acclerate your programing in right direction</h3> -->
+                <button style="font-size: 20px; border-radius: 30px; background-color: rgb(243, 151, 212);" type="button" class="btn btn-dark"><a  style="text-decoration: none; color: black;" href="/newproblem">Ask your Question</a></button>
             </div>
 
         </div>
 
             <%for(let p of prblm){%>
-                <ul class="container ques">
+                <ul class="container ques mb-4">
                     <div>
                        <div class="row mb-3">
                             <div class="col-lg-4 head" style="border-bottom: 1px dashed rgb(209, 208, 208);  color: rgb(243, 198, 75);">
