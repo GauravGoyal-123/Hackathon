@@ -11,8 +11,9 @@ router.post('/problem/:id/discuss',isLoggedIn,discussValidate,async(req,res)=>{
         const {description,exp} = req.body;
         const prblm = await Problem.findById(id);
         const userName = req.user.username;
+        const userid = req.user._id;
         const problemid=id;
-        const dis = new Discuss({description,exp,userName,problemid});
+        const dis = new Discuss({description,exp,userName,userid,problemid});
         console.log(dis);
         const user = await User.findById(req.user._id);
         user.ans.push(dis);
