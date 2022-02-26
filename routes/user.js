@@ -66,6 +66,7 @@ router.get('/logout',(req,res)=>{
 router.get('/profile',isLoggedIn,async(req,res)=>{
     try{
         const user = await User.findById(req.user._id).populate('ans').populate('ques');
+        // const user = users.reverse();
         const b=user.ans.length;
         const a=user.ques.length;
         res.render('problem/userdetail',{user,a,b});

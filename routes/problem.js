@@ -7,7 +7,8 @@ const passport = require('passport');
 
 router.get('/problem',async(req,res)=>{
     try{
-        const prblm = await Problem.find({});
+        const Prblm = await Problem.find({});
+        var prblm = Prblm.reverse();
         res.render('problem/index',{prblm});
     }
     catch(e){
@@ -57,7 +58,8 @@ router.get('/problem/difficulty/:diff',async(req,res)=>{
     try{
         const {diff} = req.params;
         const problem = await Problem.find({});
-        const prblm = problem.filter((p)=>p.level===diff);
+        const Prblm = problem.reverse(); 
+        const prblm = Prblm.filter((p)=>p.level===diff);
         res.render('problem/difficulty',{prblm,diff});
     }
     catch(e){
@@ -69,7 +71,8 @@ router.get('/problem/:topic',async(req,res)=>{
     try{
         const {topic}=req.params;
         const problem=await Problem.find({});
-        const prblm=problem.filter((p)=>p.topic===topic);
+        const Prblm = problem.reverse(); 
+        const prblm=Prblm.filter((p)=>p.topic.toUpperCase()===topic.toUpperCase());
         res.render('problem/topic',{prblm,topic});
     }
     catch(e){
