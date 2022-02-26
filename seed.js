@@ -40,7 +40,7 @@ const prblm = [
         example : "Input: s = '()' Output: true"
         
         
-    }
+    },
 //     new prblems added 
      {
         topic:"Array",
