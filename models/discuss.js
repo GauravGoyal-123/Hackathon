@@ -12,6 +12,9 @@ const discussSchema = mongoose.Schema({
     userName:{
         type:String,
     },
+    userid:{
+        type:String,
+    },
     problemid:{
         type:String,
     }
