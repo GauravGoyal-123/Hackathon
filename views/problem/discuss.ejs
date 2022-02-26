@@ -35,24 +35,16 @@
             <%for(let dis of prblm.discuss){%>
             <div class="discuss-head">
                 <div>
-                  <div class="card" style="background-color: rgb(223, 217, 210);">
-                    <div class="card-body">
-                      <blockquote class="blockquote mb-0">
-                        <p><a style="text-decoration: none; color: rgb(32, 30, 30);" href="/problem/<%=prblm._id%>/discuss/<%=dis._id%>">
-                          <h3><%=dis.description%></h3>
-                          </a>
-                      </p>
-                        <!-- <footer class="blockquote-footer"> -->
-                           <div>
-                          <%if(dis.createdAt){%>
-                              <p style="color: rgb(99, 86, 86);"><%=dis.userName%> on <%=dis.createdAt.toDateString()%></p>
-                          <%}%>
-                      </div>
-                    <!-- </footer> -->
-                      </blockquote>
+                  <div class="card mb-3">
+                    <div style="padding: 8px; text-transform: capitalize; background-color: rgb(223, 232, 240);">
+                      <p><a style="text-decoration: none; font-size: 1.4rem; color: rgb(32, 30, 30);" href="/problem/<%=prblm._id%>/discuss/<%=dis._id%>"><h5><%=dis.description%></h5></a></p>
+                      <p class="card-text"><small class="text-muted">
+                        <%if(dis.createdAt){%>
+                        <p style="color: rgb(99, 86, 86);"><%=dis.userName%> on <%=dis.createdAt.toDateString()%></p>
+                    <%}%></small></p>
                     </div>
                   </div>
-                    
+                  
                 </div>
                    
             </div>

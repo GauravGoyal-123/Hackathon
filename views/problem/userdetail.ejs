@@ -30,7 +30,7 @@
 </nav>
 
 <section>
-  <div class="row mb-4 container-fluid" style="border: 1px solid black; padding: 10px;">
+  <div class="row mb-4 container" style=" padding: 10px;">
     <!-- Detail -->
     
     <div class="col-lg-8">
@@ -47,7 +47,7 @@
       <div class="chart">
         <div class="row">
           <div class="col">
-            <div id="piechart" style="font-size: 2rem;">
+            <div id="piechart">
             </div>
           </div>
         </div>
@@ -55,21 +55,28 @@
     </div>
   </div>
 
-  <div class="row mb-4" style="border: 2px solid black;">
+  <div class="row mb-4 container">
     <!-- Questions -->
-    <div class="col-lg-6" style="border-right: 1px solid black;">
-      <h3>Question Asked</h3>
-      <%for(let q of user.ques){%>
-          <p><a href="/problem/<%=q._id%>/answer"><%=q.statement%></a> </p>
+    <div class="col-lg-6" style="border-right: 5px solid rgb(235, 224, 224);">
+      <h3 style="text-align: center; color: rgb(244, 247, 245); font-family: Verdana, Geneva, Tahoma, sans-serif; margin: 20px;">Question Asked</h3>
+      <div style="border: 1px solid rgb(17, 14, 14); padding: 10px; background-color: rgb(211, 200, 200);">
+        <%for(let q of user.ques){%>
+          <p><a style="text-decoration: none; text-transform: capitalize; color: black; font-size: 1.2rem;" href="/problem/<%=q._id%>/answer"><%=q.statement%></a> </p>
+          <hr style="color: black;">
       <%}%>
+      </div>
     </div>
 
     <!-- Answer -->
     <div class="col-lg-6">
-      <h3>Question Solved</h3>
-      <%for(let a of user.ans){%>
-          <p><a href="/problem/<%=a.problemid%>/discuss"><%=a.description%></a> </p>
+
+      <h3 style="text-align: center;font-family: Verdana, Geneva, Tahoma, sans-serif; margin: 20px;">Question Solved</h3>
+      <div style="border: 1px solid rgb(22, 22, 22); padding: 10px; margin: auto; background-color: rgb(211, 200, 200);">
+        <%for(let a of user.ans){%>
+          <p><a style="text-decoration: none; text-transform: capitalize; color: black; font-size: 1.2rem;" href="/problem/<%=a.problemid%>/discuss"><%=a.description%></a> </p>
+          <hr style="color: black;">
       <%}%>
+      </div>
     </div>
   </div>
 </section>
@@ -85,9 +92,9 @@
         const tot=noofans+noofques;
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
-          [' No of Questions asked',     noofques],
-          [' No of Questions answered',     noofans],
-          ['Other', (tot===0)?100:0],
+          ['Questions asked',     noofques],
+          ['Questions Solved',     noofans],
+          ['No work done yet', (tot===0)?100:0],
 
           
         ]);
