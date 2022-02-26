@@ -30,24 +30,24 @@
 </nav>
 
 <section>
-  <div class="row mb-4" style="border: 1px solid black;">
+  <div class="row mb-4 container-fluid" style="border: 1px solid black; padding: 10px;">
     <!-- Detail -->
     
-    <div class="col-lg-6">
-      <div>
-        <p>Username : <%=user.username%> </p>
-        <p>Email-id : <%=user.emailid%></p>
-        <p>Question Asked : <span id="ques"> <%=a%> </span> </p>
-        <p>Question Solved : <span id="ans"> <%=b%> </span> </p>
+    <div class="col-lg-8">
+      <div class="user">
+        <p style="font-weight: bold;">Username : <%=user.username%> </p>
+        <p style="font-weight: bold;">Email-id : <%=user.email%></p>
+        <p style="font-weight: bold;">Question Asked : <span id="ques"> <%=a%> </span> </p>
+        <p style="font-weight: bold;">Question Solved : <span id="ans"> <%=b%> </span> </p>
       </div>
     </div>
     
     <!-- Pie chart -->
-    <div class="col-lg-6" style="background-color: transparent;">
+    <div class="col-lg-4">
       <div class="chart">
         <div class="row">
           <div class="col">
-            <div id="piechart">
+            <div id="piechart" style="font-size: 2rem;">
             </div>
           </div>
         </div>
@@ -55,9 +55,9 @@
     </div>
   </div>
 
-  <div class="row mb-4">
+  <div class="row mb-4" style="border: 2px solid black;">
     <!-- Questions -->
-    <div class="col-lg-6">
+    <div class="col-lg-6" style="border-right: 1px solid black;">
       <h3>Question Asked</h3>
       <%for(let q of user.ques){%>
           <p><a href="/problem/<%=q._id%>/answer"><%=q.statement%></a> </p>
@@ -94,9 +94,6 @@
 
         var options = {
           title: ''
-         
-        
-       
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));

@@ -178,3 +178,12 @@ text-shadow: 1px 1px 1px #d6ce93;
     margin: 10px;
 }
 
+
+.user{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 20px;
+    font-size: 1.1rem;
+    background-color: rgb(211, 200, 200);
+    color: black;
+}
+ 
