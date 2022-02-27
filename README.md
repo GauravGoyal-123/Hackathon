@@ -4,8 +4,7 @@ Track-Web Development
 
 Tech Stack used is
 
-HTML        
-CSS
+HTML        CSS
 BOOTSTRAP
 JAVASCRIPT
 EJS
