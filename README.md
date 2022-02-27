@@ -3,7 +3,6 @@ Idea - Learning Platform (DoubtAway)
 Track-Web Development
 
 Tech Stack used is
-
 HTML        
 CSS
 BOOTSTRAP
@@ -19,12 +18,18 @@ Mongoose
 Team details
 
 Team Code : 9979a52fc4
+
 Team Name : codefreaks
+
 Team Members : Gaurav Goyal(Team Leader )-Backend Developer
+
                Chakshan Dhir-Frontend Developer
+               
                Diksha-Frontend Developer
 IsFresher: False
+
 Description of Idea
+
 IDea :We have  built a one-stop learning platform where students can help each other in solving coding problems. 
 There is a discussion section where users can get to know about the variety of approaches to a single question. 
 There is a profile page where all activities of users gets tracked.
