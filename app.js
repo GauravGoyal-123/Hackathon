@@ -51,10 +51,6 @@ app.use((req,res,next)=>{
     next();
 })
 
-app.get('/',(req,res)=>{
-    res.render('home');
-})
-
 const problemRouter = require('./routes/problem');
 const discussRouter = require('./routes/discuss');
 const userRouter = require('./routes/user');
@@ -63,6 +59,9 @@ app.use(problemRouter);
 app.use(discussRouter);
 app.use(userRouter);
 
+app.get('/',(req,res)=>{
+    res.render('home');
+})
 const port = 5000;
 app.listen(port,()=>{
     console.log("Server Connected");
