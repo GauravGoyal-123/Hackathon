@@ -5,15 +5,7 @@ mongoose.connect('mongodb://localhost:27017/doubtaway')
     .then(()=> console.log("DB seeded"));
 
 const prblm = [
-    {
-        topic:"Array",
-        level:"Hard",
-        lang:"Python",
-        statement:"Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.",
-        example : "Input: nums = [-1,0,1,2,-1,-4] Output: [[-1,-1,2],[-1,0,1]]"
-        
-        
-    },
+    
     {
         topic:"Linked-List",
         level:"Hard",
@@ -149,8 +141,8 @@ const prblm = [
         topic:"Recursion",
         level:"hard",
         lang:"C++",
-        statement:"",
-        example : "Input: Output:  "
+        statement:"You are given a string s. You can convert s to a palindrome by adding characters in front of it. Return the shortest palindrome you can find by performing this transformation.",
+        example : "Input: s ='aacecaaa' Output:   'aaacecaaa'"
         
         
     },
@@ -325,7 +317,7 @@ const prblm = [
         level:"Hard",
         lang:"C++",
         statement:"Given an adjacency matrix representation of an unweighted undirected graph named graph, which has N vertices. You have to find out if there is an eulerian path present in the graph or not.Note: The graph consists of a single component ",
-        example : "Input:  Output: "
+        example : "Input: A = 'aabc' Output: 'a#bb'"
         
         
     },
@@ -381,7 +373,7 @@ const prblm = [
         level:"Hard",
         lang:"C++",
         statement:" Given a connected undirected graph. Perform a Depth First Traversal of the graph. Note: Use recursive approach to find the DFS traversal of the graph starting from the 0th vertex from left to right according to the graph.. ",
-        example : "Input:  Output: "
+        example : "Input: A = 'aabc' Output: 'a#bb'"
         
         
     },
@@ -400,7 +392,7 @@ const prblm = [
         level:"Medium",
         lang:"C++",
         statement:"Given a Directed Acyclic Graph (DAG) with V vertices and E edges, Find any Topological Sorting of that Graph. ",
-        example : "Input:  Output: "
+        example : "Input: A = 'aabc' Output: 'a#bb'"
         
         
     },
@@ -410,7 +402,7 @@ const prblm = [
         level:"Medium",
         lang:"C++",
         statement:"Given a directed graph, find out if a vertex j is reachable from another vertex i for all vertex pairs (i, j) in the given graph. Here reachable mean that there is a path from vertex i to j. The reach-ability matrix is called transitive closure of a graph. The directed graph is represented by adjacency list graph where there are N vertices. ",
-        example : "Input:  Output: "
+        example : "Input: A = 'aabc' Output: 'a#bb'"
         
         
     },
@@ -420,10 +412,19 @@ const prblm = [
         level:"Easy",
         lang:"C++",
         statement:" Given a Directed Graph, find a Mother Vertex in the Graph (if present).  A Mother Vertex is a vertex through which we can reach all the other vertices of the Graph.",
-        example : "Input:  Output: "
+        example : "Input: A = 'aabc' Output: 'a#bb'"
         
         
-    }
+    },
+    {
+        topic:"Array",
+        level:"Hard",
+        lang:"Python",
+        statement:"Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.",
+        example : "Input: nums = [-1,0,1,2,-1,-4] Output: [[-1,-1,2],[-1,0,1]]"
+        
+        
+    },
 //     end of new problems added
     
 
