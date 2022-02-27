@@ -3,6 +3,7 @@ Idea - Learning Platform (DoubtAway)
 Track-Web Development
 
 Tech Stack used is
+
 HTML        
 CSS
 BOOTSTRAP
@@ -22,9 +23,7 @@ Team Code : 9979a52fc4
 Team Name : codefreaks
 
 Team Members : Gaurav Goyal(Team Leader )-Backend Developer
-
                Chakshan Dhir-Frontend Developer
-               
                Diksha-Frontend Developer
 IsFresher: False
 
