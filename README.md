@@ -24,7 +24,9 @@ Team Name : codefreaks
 Team Members : 
 
 Gaurav Goyal-Backend Developer
+
 Chakshan Dhir-Frontend Developer
+
 Diksha-Frontend Developer
 
 IsFresher: False
