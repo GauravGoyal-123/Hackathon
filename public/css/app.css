@@ -12,10 +12,12 @@ main{
     margin-top: 4 rem;
     color: white;
 }
+
 .box{
     display: flex;
     justify-content: space-around;
 }
+
 .multicolortext {
     background-image: linear-gradient(to left, rgb(160, 123, 160), #5390d9, white, rgb(122, 122, 223), white , white, #5390d9);
     -webkit-background-clip: text;
@@ -23,6 +25,7 @@ main{
     background-clip: text;
     color: transparent;
 }
+
 #askbutton{
     white-space: nowrap;
  border: none;
@@ -37,16 +40,9 @@ main{
         
 
 }
-
-
-
-
-
-
 .ques li{
     list-style: none;
 }
-
 .ques{
     /* box-shadow: 2px 2px 2px black; */
     /* border: 1px solid white; */
@@ -55,6 +51,7 @@ main{
     font-size: 1.2rem;
     border: 1px dashed white;
 }
+
 .head{
     display: inline-block;
     width: 32%;
@@ -83,6 +80,7 @@ main{
     text-shadow: 2px 2px 2px rgb(94, 90, 90);
     letter-spacing: 0.1rem;
 }
+
 .community{
     border: 2px solid rgb(41, 8, 38);
     border-radius: 20px;
@@ -91,21 +89,25 @@ main{
     display: flex;
     justify-content: space-around;
 }
+
 .community a{
     text-decoration: none;
     font-size: 1.3rem;
     color: white;
     /* font-family: cursive; */
 }
+
 .login{
     display: flex;
     justify-content: end;
 }
+
 .community a:hover{
     color: rgb(200, 140, 228);
 }
+
 .heading{
-    font-family: 'Akaya Telivigala', cursive;
+font-family: 'Akaya Telivigala', cursive;
 font-family: 'Comforter Brush', cursive;
 font-family: 'Josefin Sans', sans-serif;
 font-family: 'Lobster', cursive;
@@ -115,11 +117,13 @@ margin: 15px;
 color: #d6ce93;
 text-shadow: 1px 1px 1px #d6ce93;
 }
+
 @media screen and (max-width:1535) {
     .heading{
         font-size: 20px;
     }
 }
+
 .topicname{
     padding: 5px;
     margin: 10px;
@@ -177,7 +181,6 @@ text-shadow: 1px 1px 1px #d6ce93;
     font-size: 1.2rem;
     margin: 10px;
 }
-
 
 .user{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;

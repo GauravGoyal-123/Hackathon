@@ -61,7 +61,7 @@
       <h3 style="text-align: center; color: rgb(244, 247, 245); font-family: Verdana, Geneva, Tahoma, sans-serif; margin: 20px;">Question Asked</h3>
       <div style="border: 1px solid rgb(17, 14, 14); padding: 10px; background-color: rgb(211, 200, 200);">
         <%for(let q of user.ques){%>
-          <p><a style="text-decoration: none; text-transform: capitalize; color: black; font-size: 1.2rem;" href="/problem/<%=q._id%>/answer"><%=q.statement%></a> </p>
+          <p><a style="text-decoration: none; text-transform: capitalize; color: black; font-size: 1.2rem;" href="/problem/<%=q._id%>/answer"><%=q.statement.substring(0,50)%>...</a> </p>
           <hr style="color: black;">
       <%}%>
       </div>
