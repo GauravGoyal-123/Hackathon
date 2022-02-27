@@ -21,8 +21,10 @@ Team Code : 9979a52fc4
 
 Team Name : codefreaks
 
-Team Members : Gaurav Goyal(Team Leader )-Backend Developer
+Team Members : Gaurav Goyal-Backend Developer
+
                Chakshan Dhir-Frontend Developer
+               
                Diksha-Frontend Developer
 IsFresher: False
 
