@@ -2,7 +2,7 @@
 
 **Track**-Web Development
 
-**Tech Stack **
+Tech Stack 
 
 HTML        CSS
 BOOTSTRAP
