@@ -15,9 +15,9 @@ const discussSchema = mongoose.Schema({
     userid:{
         type:String,
     },
-    // problemid:{
-    //     type:String,
-    // }
+    problemid:{
+        type:String,
+    }
 },{timestamps:true});
 
 const Discuss = mongoose.model('Discuss',discussSchema);
