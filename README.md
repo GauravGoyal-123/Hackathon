@@ -1,6 +1,6 @@
-Idea - Learning Platform (DoubtAway)
+**Idea** - Learning Platform (DoubtAway)
 
-Track-Web Development
+**Track**-Web Development
 
 Tech Stack used is
 
