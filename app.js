@@ -67,7 +67,7 @@ app.use(userRouter);
 app.get('/',(req,res)=>{
     res.render('home');
 })
-const port = 5000;
+const port = 5000  || process.env.PORT;
 app.listen(port,()=>{
     console.log("Server Connected");
 })
