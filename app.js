@@ -1,3 +1,6 @@
+if(process.env.NODE_ENV!=='production'){
+    require('dotenv').config();
+}
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -10,7 +13,9 @@ const LocalStrategy = require('passport-local');
 const User = require('./models/user');
 const methodOverride = require('method-override');
 
-mongoose.connect('mongodb://localhost:27017/doubtaway')
+const dburl = process.env.url || 'mongodb://localhost:27017/doubtaway';
+
+mongoose.connect(dburl)
     .then(()=> console.log("DB connected"))
     .catch((err)=>console.log(err));
 

@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const Problem = require('./models/problems');
 
-mongoose.connect('mongodb://localhost:27017/doubtaway')
+const dburl = process.env.url || 'mongodb://localhost:27017/doubtaway';
+
+mongoose.connect(dburl)
     .then(()=> console.log("DB seeded"));
 
 const prblm = [
